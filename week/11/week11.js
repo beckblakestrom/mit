@@ -283,27 +283,3 @@ const block = document.getElementById("block");
 const newText = `${newStudent.name} is ${newStudent.age} years old`;
 
 block.innerHTML = newText;
-
-// function scope
-function userInfo() {
-	var age = 20;
-	return age;
-}
-console.log(userInfo());
-
-// closure
-function outer() {
-	var counter = 1;
-
-	function inner() {
-		console.log(counter);
-		counter++;
-	}
-
-	return inner;
-}
-
-var inner = outer();
-inner();
-inner();
-inner();
