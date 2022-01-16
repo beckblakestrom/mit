@@ -1,0 +1,88 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* changes base font to 10px */
+html {
+	font-size: 10px;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+:root {
+	--dark: hsl(0, 0%, 15%);
+	--light: hsl(45, 20%, 92.5%);
+}
+
+body {
+	background-color: var(--dark);
+}
+
+/* back to main */
+
+.container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: var(--light);
+	border: solid 2rem var(--dark);
+	border-radius: 3rem;
+
+	font-size: 20px;
+	padding: 2rem;
+	font-family: monospace;
+	color: orangered;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.block {
+	position: fixed;
+	left: 25%;
+	top: 25%;
+	color: var(--dark);
+	font-size: 20px;
+	text-transform: capitalize;
+}
