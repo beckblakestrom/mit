@@ -11,6 +11,6 @@ const getRandomColor = () => {
 };
 
 ReactDOM.render(
-	<Hello action={getRandomColor} name="lisa" />,
+	<Hello action={getRandomColor} name="Blake" />,
 	document.getElementById("root")
 );
