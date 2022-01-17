@@ -1,4 +1,4 @@
-const name = 'Mary';
-const element = <h1> Hello {name} </h1>;
+const name = "Blake";
+const element = <h4> Whats Up {name} </h4>;
 
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(element, document.getElementById("root"));
