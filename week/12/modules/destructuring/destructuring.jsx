@@ -11,8 +11,6 @@ const App = () => {
 // 	return <button onClick={onClick}>Star Wars?</button>;
 // };
 
-import Button from "react-bootstrap/Button";
-
 const MyButton = ({ onClick }) => {
 	let { Button } = ReactBootstrap;
 	return <Button onClick={onClick}>Star Wars?</Button>;
