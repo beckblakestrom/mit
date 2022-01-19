@@ -1,5 +1,5 @@
 menuButton.onclick = () => {
-	let menu = document.getElementById("menu");
+	menuBackground.classList.toggle("open-menu__background");
 	menuBrowser.classList.toggle("open-menu__browser");
 	menuButton.classList.toggle("open-menu__button");
 	menuButtonText.classList.toggle("open-menu__button-text");
