@@ -68,12 +68,11 @@ a {
   position: absolute;
   right: -20%;
   bottom: -20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 60%;
   transition: all 1s ease-in-out;
   opacity: 0;
   transform: rotate(90deg) scaleY(0);
+  text-transform: capitalize;
 }
 .menu__browser-header {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -81,6 +80,12 @@ a {
   font-style: normal;
   font-size: 3.5rem;
   color: #212121;
+  text-decoration: underline;
+}
+.menu__browser-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .menu__browser-category-title {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -88,6 +93,10 @@ a {
   font-style: normal;
   font-size: 3.5rem;
   color: #212121;
+}
+.menu__browser-category-arrow {
+  color: #fafafa;
+  font-size: 3rem;
 }
 .menu__button {
   background-color: #05f09a;
@@ -128,15 +137,15 @@ a {
 
 .open-menu__background {
   height: 100%;
-  width: 90%;
+  width: 100%;
   right: 0;
   bottom: 0;
 }
 .open-menu__browser {
-  right: 30%;
+  right: 50%;
   bottom: 50%;
   opacity: 1;
-  transform: rotate(0) scaleY(100%);
+  transform: rotate(0) scaleY(100%) translate(50%, 50%);
 }
 .open-menu__button-background {
   width: 60%;
@@ -151,6 +160,10 @@ a {
 .open-menu__button-text {
   transform: skew(45deg) rotate(135deg) scale(0);
   opacity: 0;
+}
+
+.down-arrow {
+  display: inline;
 }
 
 /*# sourceMappingURL=style.css.map */
