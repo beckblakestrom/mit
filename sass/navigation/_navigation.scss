@@ -1,0 +1,83 @@
+.menu {
+	&__browser {
+		background-color: $color-green;
+		position: absolute;
+		bottom: 2.5%;
+		right: 5%;
+		height: 6%;
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: all 1s ease-in-out;
+	}
+
+	&__button {
+		background-color: $color-green;
+		position: absolute;
+		bottom: 2.5%;
+		right: 5%;
+		height: 6%;
+		width: 30%;
+		display: flex;
+		justify-content: center;
+		transition: all 1s 0.5s;
+
+		&-background {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: $color-green;
+			transition: background-color 1s ease-in-out, height 1s ease-in-out,
+				width 1s ease-in-out, transform 1s 1s;
+
+			&::after {
+				content: "";
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-color: $color-green;
+				transition: all 1s ease-in-out;
+				transform: rotate(0);
+			}
+		}
+
+		&-text {
+			@include neue-haas-grotesk-display-65-medium;
+			font-size: 3.5rem;
+			color: $color-purpleblue;
+			transition: transform 1s ease-in-out, opacity 1s 0.2s;
+			z-index: +1;
+		}
+	}
+}
+
+.open-menu {
+	&__browser {
+		height: 100%;
+		width: 90%;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__button {
+		&-background {
+			width: 60%;
+			height: 40%;
+			background-color: $color-purpleblue;
+			transform: rotate(45deg);
+
+			&::after {
+				background-color: $color-purpleblue;
+				transform: rotate(90deg);
+			}
+		}
+		&-text {
+			// transform: scale(0) rotate(180deg);
+			// opacity: 0;
+			transform: skew(45deg) rotate(135deg) scale(0);
+			opacity: 0;
+		}
+	}
+}

@@ -16,7 +16,7 @@
 
 /* changes base font to 10px */
 html {
-  font-size: 62.5%;
+  font-size: 10px;
   scroll-behavior: smooth;
 }
 
@@ -47,6 +47,77 @@ textarea {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.menu__browser {
+  background-color: #05f09a;
+  position: absolute;
+  bottom: 2.5%;
+  right: 5%;
+  height: 6%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+.menu__button {
+  background-color: #05f09a;
+  position: absolute;
+  bottom: 2.5%;
+  right: 5%;
+  height: 6%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  transition: all 1s 0.5s;
+}
+.menu__button-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #05f09a;
+  transition: background-color 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, transform 1s 1s;
+}
+.menu__button-background::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #05f09a;
+  transition: all 1s ease-in-out;
+  transform: rotate(0);
+}
+.menu__button-text {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3.5rem;
+  color: #4566e8;
+  transition: transform 1s ease-in-out, opacity 1s 0.2s;
+  z-index: 1;
+}
+
+.open-menu__browser {
+  height: 100%;
+  width: 90%;
+  right: 0;
+  bottom: 0;
+}
+.open-menu__button-background {
+  width: 60%;
+  height: 40%;
+  background-color: #4566e8;
+  transform: rotate(45deg);
+}
+.open-menu__button-background::after {
+  background-color: #4566e8;
+  transform: rotate(90deg);
+}
+.open-menu__button-text {
+  transform: skew(45deg) rotate(135deg) scale(0);
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
