@@ -17,6 +17,27 @@
 		<!-- links -->
 		<script defer type="module" src="./babel.jsx"></script>
 		<link rel="stylesheet" href="https://use.typekit.net/gnv0vjh.css" />
+
+		<!-- not for use in production | Babel library -->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>Template</h1>
+
+		<!-- we will put our react components inside this div -->
+		<div id="root"></div>
+
+		<!-- react libraries -->
+		<script
+			src="https://unpkg.com/react@17/umd/react.development.js"
+			crossorigin
+		></script>
+		<script
+			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+			crossorigin
+		></script>
+
+		<!-- react component -->
+		<script src="./babel.js" defer type="text/babel"></script>
+	</body>
 </html>
