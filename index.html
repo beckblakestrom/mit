@@ -57,19 +57,53 @@
 			<div id="menuBackground" class="menu__background"></div>
 			<div id="menuBrowser" class="menu__browser">
 				<header class="menu__browser-header">browse by:</header>
-				<div class="menu__browser-category">
-					<h3 class="menu__browser-category-title">week</h3>
-					<i
-						class="bi bi-caret-right menu-arrow menu__browser-category-arrow"
-					></i>
+				<div class="menu__browser-category-container">
+					<div
+						onclick="openContainer(this.id)"
+						id="menuBrowserWeek"
+						class="menu__browser-category"
+					>
+						<h3 class="menu__browser-category-title">week</h3>
+						<i
+							class="bi bi-caret-right menu-arrow menu__browser-category-arrow"
+						></i>
+					</div>
+					<div class="menu__browser-category-files">
+						<div class="menu__browser-category-link-container">
+							<a href="#" class="menu__browser-category-link">Week 1</a>
+							<i
+								class="bi bi-calendar-week menu__browser-category-link-arrow"
+							></i>
+						</div>
+						<div class="menu__browser-category-link-container">
+							<a href="#" class="menu__browser-category-link">Week 2</a>
+							<i
+								class="bi bi-calendar-week menu__browser-category-link-arrow"
+							></i>
+						</div>
+						<div class="menu__browser-category-link-container">
+							<a href="#" class="menu__browser-category-link">Week 3</a>
+							<i
+								class="bi bi-calendar-week menu__browser-category-link-arrow"
+							></i>
+						</div>
+					</div>
 				</div>
-				<div class="menu__browser-category">
+				<div
+					onclick="openContainer(this.id)"
+					id="menuBrowserTech"
+					class="menu__browser-category"
+				>
 					<h3 class="menu__browser-category-title">Technology</h3>
 					<i
 						class="bi bi-caret-right menu-arrow menu__browser-category-arrow"
 					></i>
 				</div>
-				<div class="menu__browser-category">
+				<div
+					onclick="openContainer(this.id)"
+					id="menuBrowserTopic"
+					class="menu__browser-category"
+				>
 					<h3 class="menu__browser-category-title">Topic</h3>
 					<i
 						class="bi bi-caret-right menu-arrow menu__browser-category-arrow"

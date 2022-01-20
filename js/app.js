@@ -5,3 +5,7 @@ menuButton.onclick = () => {
 	menuButtonText.classList.toggle("open-menu__button-text");
 	menuButtonBackground.classList.toggle("open-menu__button-background");
 };
+
+function openContainer(container) {
+	console.log(container);
+}
