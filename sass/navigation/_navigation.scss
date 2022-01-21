@@ -17,21 +17,32 @@
 		right: -20%;
 		bottom: -20%;
 		width: 80%;
+		height: 100%;
 		transition: all 1s ease-in-out;
 		opacity: 0;
 		transform: rotate(90deg) scaleY(0);
 		text-transform: capitalize;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		&-header {
 			@include neue-haas-grotesk-display-65-medium;
 			font-size: 3.5rem;
 			color: $color-black;
 			text-decoration: underline;
+			height: 7%;
 		}
 
 		&-category {
 			display: flex;
 			justify-content: space-between;
 			align-items: baseline;
+
+			&-container {
+				height: 7%;
+				transition: all 1s;
+			}
 
 			&-title {
 				@include neue-haas-grotesk-display-65-medium;
@@ -49,6 +60,9 @@
 				grid-template-columns: 1fr 1fr 1fr;
 				grid-template-rows: repeat(10, 1fr);
 				gap: 0.5rem;
+				height: 0;
+				transition: all 1s;
+				overflow: hidden;
 			}
 
 			&-link-container {
@@ -121,9 +135,9 @@
 
 	&__browser {
 		right: 50%;
-		bottom: 50%;
+		bottom: 0;
 		opacity: 1;
-		transform: rotate(0) scaleY(100%) translate(50%, 50%);
+		transform: rotate(0) scaleY(100%) translateX(50%);
 	}
 
 	&__button {
@@ -149,4 +163,12 @@
 
 .down-arrow {
 	display: inline;
+}
+
+.open-link {
+	height: 100%;
+}
+
+.open-container {
+	height: 50%;
 }

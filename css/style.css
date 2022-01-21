@@ -69,10 +69,14 @@ a {
   right: -20%;
   bottom: -20%;
   width: 80%;
+  height: 100%;
   transition: all 1s ease-in-out;
   opacity: 0;
   transform: rotate(90deg) scaleY(0);
   text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .menu__browser-header {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -81,11 +85,16 @@ a {
   font-size: 3.5rem;
   color: #212121;
   text-decoration: underline;
+  height: 7%;
 }
 .menu__browser-category {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+.menu__browser-category-container {
+  height: 7%;
+  transition: all 1s;
 }
 .menu__browser-category-title {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -103,6 +112,9 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(10, 1fr);
   gap: 0.5rem;
+  height: 0;
+  transition: all 1s;
+  overflow: hidden;
 }
 .menu__browser-category-link-container {
   display: flex;
@@ -166,9 +178,9 @@ a {
 }
 .open-menu__browser {
   right: 50%;
-  bottom: 50%;
+  bottom: 0;
   opacity: 1;
-  transform: rotate(0) scaleY(100%) translate(50%, 50%);
+  transform: rotate(0) scaleY(100%) translateX(50%);
 }
 .open-menu__button-background {
   width: 60%;
@@ -187,6 +199,14 @@ a {
 
 .down-arrow {
   display: inline;
+}
+
+.open-link {
+  height: 100%;
+}
+
+.open-container {
+  height: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
