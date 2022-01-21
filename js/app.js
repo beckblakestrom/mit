@@ -16,8 +16,8 @@ menuButton.onclick = () => {
 // }
 
 menuBrowserWeek.onclick = () => {
-	let parent = menuBrowserWeek.parentNode;
-	parent.classList.toggle("open-container");
-	let opener = menuBrowserWeek.nextElementSibling;
-	opener.classList.toggle("open-link");
+	categoryGrid.classList.toggle("open");
+	menuBrowserWeek.classList.toggle("width-100");
+	weekArrow.classList.toggle("rotate-90");
+	weekContainer.classList.toggle("height-30");
 };
