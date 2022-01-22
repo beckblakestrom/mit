@@ -8,6 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	visibility: collapse;
 
 	// backdrop
 	&__background {
@@ -111,6 +112,7 @@
 	}
 
 	&__button {
+		visibility: visible;
 		background-color: $color-green;
 		position: absolute;
 		bottom: 2.5%;
@@ -119,6 +121,7 @@
 		width: 30%;
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		transition: all 1s 0.5s;
 
 		&-background {
@@ -151,6 +154,7 @@
 }
 
 .open-menu {
+	visibility: visible;
 	&__background {
 		height: 100%;
 		width: 100%;
