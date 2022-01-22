@@ -52,25 +52,27 @@
 			"class class class ."
 			". exp exp exp";
 		align-items: center;
-		font-size: 2.5rem;
+
 		padding: 2rem;
 		&__class-title {
 			@include ocr-a;
 			color: $color-grey;
 			grid-area: class;
+			font-size: 2.5rem;
 		}
 
 		&__site-explanation {
 			@include neue-haas-grotesk-display-35-extra-light;
 			color: $color-black;
 			grid-area: exp;
+			font-size: 3rem;
 		}
 	}
 
 	// footer
 	&-footer {
 		&__legal {
-			font-size: 1.2rem;
+			font-size: 1.4rem;
 			width: 30%;
 			padding-left: 2rem;
 			@include neue-haas-grotesk-display-35-extra-light;
