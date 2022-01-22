@@ -1,33 +1,80 @@
 .index {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	grid-template-rows: 25% 65% 10%;
+	align-items: center;
 	// header
 	&-header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		// name
 		&__name {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			@include flegrei;
 			&-first {
+				color: $color-black;
+				font-size: 11rem;
 			}
 			&-last {
+				color: $color-green;
+				font-size: 5rem;
+				position: absolute;
+				bottom: 0;
+				text-shadow: 6px 6px 2px rgba($color-black, 0.1);
 			}
 		}
 
 		// mit logo
 		&__mitxpro {
+			width: 50%;
 			&-img {
+				filter: hue-rotate(260deg) brightness(1.75);
 			}
 		}
 	}
 
 	// body
 	&-body {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			"class class class ."
+			". exp exp exp";
+		align-items: center;
+		font-size: 2.5rem;
+		padding: 2rem;
 		&__class-title {
+			@include ocr-a;
+			color: $color-grey;
+			grid-area: class;
 		}
 
 		&__site-explanation {
+			@include neue-haas-grotesk-display-35-extra-light;
+			color: $color-black;
+			grid-area: exp;
 		}
 	}
 
 	// footer
 	&-footer {
 		&__legal {
+			font-size: 1.2rem;
+			width: 30%;
+			padding-left: 2rem;
+			@include neue-haas-grotesk-display-35-extra-light;
+			color: $color-black;
 		}
 	}
 }

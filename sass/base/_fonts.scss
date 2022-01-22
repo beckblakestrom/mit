@@ -4,6 +4,12 @@
 	font-style: normal;
 }
 
+@mixin neue-haas-grotesk-display-35-extra-light {
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
 @mixin flegrei {
 	font-family: flegrei, sans-serif;
 	font-weight: 400;

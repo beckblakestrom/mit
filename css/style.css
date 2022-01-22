@@ -235,4 +235,79 @@ a {
   left: 0;
 }
 
+.index {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 25% 65% 10%;
+  align-items: center;
+}
+.index-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-header__name {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: flegrei, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.index-header__name-first {
+  color: #212121;
+  font-size: 11rem;
+}
+.index-header__name-last {
+  color: #05f09a;
+  font-size: 5rem;
+  position: absolute;
+  bottom: 0;
+  text-shadow: 6px 6px 2px rgba(33, 33, 33, 0.1);
+}
+.index-header__mitxpro {
+  width: 50%;
+}
+.index-header__mitxpro-img {
+  filter: hue-rotate(260deg) brightness(1.75);
+}
+.index-body {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "class class class ." ". exp exp exp";
+  align-items: center;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+.index-body__class-title {
+  font-family: ocr-a-std, monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: #999999;
+  grid-area: class;
+}
+.index-body__site-explanation {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #212121;
+  grid-area: exp;
+}
+.index-footer__legal {
+  font-size: 1.2rem;
+  width: 30%;
+  padding-left: 2rem;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #212121;
+}
+
 /*# sourceMappingURL=style.css.map */
