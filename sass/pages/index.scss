@@ -1,0 +1,33 @@
+.index {
+	// header
+	&-header {
+		// name
+		&__name {
+			&-first {
+			}
+			&-last {
+			}
+		}
+
+		// mit logo
+		&__mitxpro {
+			&-img {
+			}
+		}
+	}
+
+	// body
+	&-body {
+		&__class-title {
+		}
+
+		&__site-explanation {
+		}
+	}
+
+	// footer
+	&-footer {
+		&__legal {
+		}
+	}
+}
