@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- essentials -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- descriptors -->
+		<title>Blake Beckstrom - MITxPRO - Week 13 - Attributes</title>
+		<meta
+			name="description"
+			content="Blake Beckstrom's Classwork: MIT Professional Certificate in Coding: Full Stack Development with MERN - Week 13 - Attributes"
+		/>
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+		<!-- links -->
+		<link rel="stylesheet" href="https://use.typekit.net/gnv0vjh.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+
+		<!-- not for use in production | Babel library -->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+		<!-- element used by react -->
+		<div id="root"></div>
+
+		<!-- react libraries -->
+		<script
+			src="https://unpkg.com/react@17/umd/react.development.js"
+			crossorigin
+		></script>
+		<script
+			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+			crossorigin
+		></script>
+
+		<!-- react component -->
+		<script defer type="text/babel">
+			const style = {
+				fontFamily: "bely, serif",
+				fontWeight: 400,
+				fontStyle: "normal",
+				color: "hsl(360, 85%, 40%)",
+				fontSize: "10rem",
+			};
+
+			const mit = (
+				<a href="https://www.mit.edu" style={style}>
+					MIT
+				</a>
+			);
+
+			ReactDOM.render(mit, document.getElementById("root"));
+		</script>
+	</body>
+</html>
