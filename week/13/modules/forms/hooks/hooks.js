@@ -1,16 +1,18 @@
 function SignUp() {
-	const [year, setYear] = React.useState("");
-	const [name, setName] = React.useState("");
-	const [email, setEmail] = React.useState("");
-	const [password, setPassword] = React.useState("");
-	const [checkbox, setCheckbox] = React.useState("");
+	const [values, handleChange] = useForm({
+		year: "",
+		name: "",
+		email: "",
+		password: "",
+		checkbox: false,
+	});
 
 	function handle() {
-		console.log("checkbox: ", setCheckbox);
+		console.log("values: ", values);
 	}
 	return (
 		<>
-			<select value={year} onChange={(e) => setYear(e.target.value)}>
+			<select name="year" value={values.year} onChange={handleChange}>
 				<option>Freshman</option>
 				<option>Sophmore</option>
 				<option>Junior</option>
@@ -18,26 +20,30 @@ function SignUp() {
 			</select>
 			<div>Name</div>
 			<input
-				value={name}
-				onChange={(e) => setName(e.target.value)}
+				name="name"
+				value={values.name}
+				onChange={handleChange}
 				type="text"
 			/>
 			<div>Email</div>
 			<input
-				value={email}
-				onChange={(e) => setEmail(e.target.value)}
+				name="email"
+				value={values.email}
+				onChange={handleChange}
 				type="text"
 			/>
 			<div>Password</div>
 			<input
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
+				name="password"
+				value={values.password}
+				onChange={handleChange}
 				type="text"
 			/>
 			<div>
 				<input
-					value={checkbox}
-					onChange={(e) => setCheckbox(e.target.checked)}
+					name="checkbox"
+					value={values.checkbox}
+					onChange={handleChange}
 					type="checkbox"
 				/>
 				Remember Me
