@@ -15,10 +15,16 @@ function SignUp() {
 
 	function validate() {
 		if (!values.name) {
-			setError({ ...errors, nameError: "bad" });
+			setError({ ...errors, nameError: "Please enter a name." });
 		} else {
 			setError({ ...errors, nameError: "" });
 		}
+
+		// if (!values.email) {
+		// 	setError({ ...errors, emailError: "Please enter a email address." });
+		// } else {
+		// 	setError({ ...errors, emailError: "" });
+		// }
 	}
 
 	function handle() {
