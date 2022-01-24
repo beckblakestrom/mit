@@ -20,11 +20,11 @@ function SignUp() {
 			setError({ ...errors, nameError: "" });
 		}
 
-		// if (!values.email) {
-		// 	setError({ ...errors, emailError: "Please enter a email address." });
-		// } else {
-		// 	setError({ ...errors, emailError: "" });
-		// }
+		if (!values.email) {
+			setError({ ...errors, emailError: "Please enter a email address." });
+		} else {
+			setError({ ...errors, emailError: "" });
+		}
 	}
 
 	function handle() {
