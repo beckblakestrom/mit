@@ -34,8 +34,11 @@
 
 		// mit logo
 		&__mitxpro {
-			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			&-img {
+				width: 50%;
 				filter: hue-rotate(260deg) brightness(1.75);
 			}
 		}

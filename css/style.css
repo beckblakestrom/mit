@@ -62,10 +62,10 @@ a {
 .menu__background {
   background-color: #05f09a;
   position: absolute;
-  bottom: 2.5%;
-  right: 5%;
-  height: 6%;
-  width: 30%;
+  bottom: 2rem;
+  right: 2rem;
+  height: 5rem;
+  width: 10rem;
   transition: all 1s ease-in-out;
 }
 .menu__browser {
@@ -143,10 +143,10 @@ a {
   visibility: visible;
   background-color: #05f09a;
   position: absolute;
-  bottom: 2.5%;
-  right: 5%;
-  height: 6%;
-  width: 30%;
+  bottom: 2rem;
+  right: 2rem;
+  height: 5rem;
+  width: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +157,7 @@ a {
   height: 100%;
   width: 100%;
   background-color: #05f09a;
-  transition: background-color 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, transform 1s 1s;
+  transition: all 1s ease;
 }
 .menu__button-background::after {
   content: "";
@@ -172,7 +172,7 @@ a {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #4566e8;
   transition: transform 1s ease-in-out, opacity 1s 0.2s;
   z-index: 1;
@@ -195,7 +195,7 @@ a {
   width: 60%;
   height: 40%;
   background-color: #4566e8;
-  transform: rotate(45deg);
+  transform: translate(25%, -50%) rotate(45deg);
 }
 .open-menu__button-background::after {
   background-color: #4566e8;
@@ -276,9 +276,12 @@ a {
   text-shadow: 6px 6px 2px rgba(33, 33, 33, 0.1);
 }
 .index-header__mitxpro {
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .index-header__mitxpro-img {
+  width: 50%;
   filter: hue-rotate(260deg) brightness(1.75);
 }
 .index-body {

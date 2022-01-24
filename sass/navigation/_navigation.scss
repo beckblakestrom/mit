@@ -14,10 +14,10 @@
 	&__background {
 		background-color: $color-green;
 		position: absolute;
-		bottom: 2.5%;
-		right: 5%;
-		height: 6%;
-		width: 30%;
+		bottom: 2rem;
+		right: 2rem;
+		height: 5rem;
+		width: 10rem;
 		transition: all 1s ease-in-out;
 	}
 
@@ -115,10 +115,10 @@
 		visibility: visible;
 		background-color: $color-green;
 		position: absolute;
-		bottom: 2.5%;
-		right: 5%;
-		height: 6%;
-		width: 30%;
+		bottom: 2rem;
+		right: 2rem;
+		height: 5rem;
+		width: 10rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -129,8 +129,7 @@
 			height: 100%;
 			width: 100%;
 			background-color: $color-green;
-			transition: background-color 1s ease-in-out, height 1s ease-in-out,
-				width 1s ease-in-out, transform 1s 1s;
+			transition: all 1s ease;
 
 			&::after {
 				content: "";
@@ -172,7 +171,7 @@
 			width: 60%;
 			height: 40%;
 			background-color: $color-purpleblue;
-			transform: rotate(45deg);
+			transform: translate(25%, -50%) rotate(45deg);
 
 			&::after {
 				background-color: $color-purpleblue;
