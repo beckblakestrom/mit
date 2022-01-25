@@ -14,9 +14,9 @@ function App() {
 		},
 		validate: (values) => {
 			let errors = {};
-			if (!values.name) errors.name = "Required";
-			if (!values.email) errors.email = "Required";
-			if (!values.password) errors.password = "Required";
+			if (!values.name) errors.name = "Field Required";
+			if (!values.email) errors.email = "Field Required";
+			if (!values.password) errors.password = "Field Required";
 			return errors;
 		},
 	});
