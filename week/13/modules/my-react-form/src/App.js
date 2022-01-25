@@ -21,10 +21,11 @@ function App() {
 		},
 	});
 	return (
-		<div>
-			<form onSubmit={formik.handleSubmit}>
-				<div>Name</div>
+		<div className="form-container">
+			<form className="form" onSubmit={formik.handleSubmit}>
+				<div className="title">Name</div>
 				<input
+					className="input"
 					name="name"
 					type="text"
 					onChange={formik.handleChange}
@@ -33,8 +34,9 @@ function App() {
 				{formik.errors.name ? (
 					<div style={{ color: "red" }}>{formik.errors.name}</div>
 				) : null}
-				<div>Email</div>
+				<div className="title">Email</div>
 				<input
+					className="input"
 					name="email"
 					type="text"
 					onChange={formik.handleChange}
@@ -43,8 +45,9 @@ function App() {
 				{formik.errors.email ? (
 					<div style={{ color: "red" }}>{formik.errors.email}</div>
 				) : null}
-				<div>Password</div>
+				<div className="title">Password</div>
 				<input
+					className="input"
 					name="password"
 					type="text"
 					onChange={formik.handleChange}
@@ -54,7 +57,9 @@ function App() {
 					<div style={{ color: "red" }}>{formik.errors.password}</div>
 				) : null}
 				<br />
-				<button type="submit">submit</button>
+				<button className="button" type="submit">
+					submit
+				</button>
 			</form>
 		</div>
 	);
