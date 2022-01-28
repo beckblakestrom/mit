@@ -14,17 +14,12 @@ function App() {
 		},
 	]);
 
-	const [value, setValue] = React.useState("");
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (!value) return;
-		const newTasks = [...tasks, { text: value, isCompleted: false }];
+	const addTask = (text) => {
+		const newTasks = [...tasks, { text: text, isCompleted: false }];
 		setTasks(newTasks);
-		setValue("");
 	};
 
-	const removeTask = (e) => {
-		const index = Number(e.target.id);
+	const removeTask = (index) => {
 		let temp = [...tasks];
 		temp.splice(index, 1);
 		setTasks(temp);
@@ -41,30 +36,16 @@ function App() {
 				{/* <menuButton /> */}
 			</header>
 			<main className="main">
-				<div className="all">
-					<i onClick={removeAll} class="bi bi-check2-all clear"></i>
+				<div onClick={removeAll} className="all">
+					<i class="bi bi-check2-all clear"></i>
+					Clear All
 				</div>
 				{tasks.map((task, i) => (
-					<div id={i} className="task" key={i}>
-						{task.text}
-						<i onClick={removeTask} class="bi bi-check2-square complete"></i>
-					</div>
+					<Todo index={i} task={task} remove={removeTask} />
 				))}
 			</main>
 			<footer className="footer">
-				<form onSubmit={handleSubmit} className="form">
-					<input
-						value={value}
-						type="text"
-						className="input"
-						placeholder="I need to..."
-						onChange={(e) => setValue(e.target.value)}
-					/>
-					<button className="button" type="submit">
-						Add Task
-						<i class="add bi bi-journal-plus"></i>
-					</button>
-				</form>
+				<TodoForm addTask={addTask}></TodoForm>
 			</footer>
 		</React.Fragment>
 	);
