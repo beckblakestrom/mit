@@ -1,0 +1,163 @@
+/* @mixin neue-haas-grotesk-display-65-medium {
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@mixin neue-haas-grotesk-display-35-extra-light {
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+} */
+
+/* resets */
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* changes base font to 10px */
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* end of resets */
+
+.root {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 33%;
+
+	display: grid;
+	grid-template-rows: auto auto auto;
+	align-content: center;
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+	.root {
+		width: 95%;
+	}
+}
+
+.header {
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 5rem;
+	border: solid black 0.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main {
+	border-left: solid black 0.3rem;
+	border-right: solid black 0.3rem;
+	font-size: 2rem;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	padding: 1rem;
+	transition: all 1s;
+}
+
+.task {
+	background-color: hsl(0, 0%, 98%);
+	border: solid black 0.3rem;
+	padding: 0.5rem 1rem;
+	margin: 1rem;
+	letter-spacing: 2px;
+}
+
+.footer {
+	border: solid black 0.3rem;
+}
+
+.form {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 2rem;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 300;
+	padding: 1rem;
+}
+
+.input {
+	padding: 1rem 2rem;
+	border: solid black 0.3rem;
+	width: 45%;
+}
+
+.button {
+	border: solid black 0.3rem;
+
+	padding: 1rem 2rem;
+	width: 45%;
+	text-transform: capitalize;
+	transition: all 0.2s linear;
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	white-space: nowrap;
+}
+
+.button:hover {
+	cursor: pointer;
+	color: orangered;
+}
+
+.add {
+	transition: all 0.5s linear;
+}
+
+.button:hover .add {
+	transform: rotate(90deg) scale(2);
+}
