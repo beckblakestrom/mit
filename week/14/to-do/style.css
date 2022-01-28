@@ -104,13 +104,40 @@ a {
 	padding: 1rem;
 	transition: all 1s;
 }
+.all {
+	display: flex;
+	justify-content: end;
+}
+
+.clear {
+	transition: all 0.3s cubic-bezier(0.2, 0.1, 0.5, 2);
+}
+
+.clear:hover {
+	cursor: pointer;
+	transform: scale(1.25);
+	color: orangered;
+}
 
 .task {
-	background-color: hsl(0, 0%, 98%);
 	border: solid black 0.3rem;
 	padding: 0.5rem 1rem;
 	margin: 1rem;
 	letter-spacing: 2px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.complete {
+	transition: transform 0.3s cubic-bezier(0.2, 0.1, 0.5, 2),
+		color 0.3s ease-in-out;
+}
+
+.complete:hover {
+	cursor: pointer;
+	color: hsl(145, 50%, 50%);
+	transform: scale(1.5);
 }
 
 .footer {
@@ -133,6 +160,11 @@ a {
 	padding: 1rem 2rem;
 	border: solid black 0.3rem;
 	width: 45%;
+	transition: all 0.5s;
+}
+
+.input:hover {
+	background-color: hsl(0, 0%, 95%);
 }
 
 .button {
@@ -151,13 +183,14 @@ a {
 
 .button:hover {
 	cursor: pointer;
-	color: orangered;
+	color: hsl(210, 100%, 60%);
 }
 
 .add {
-	transition: all 0.5s linear;
+	transition: all 0.2s linear;
+	transform-origin: center;
 }
 
 .button:hover .add {
-	transform: rotate(90deg) scale(2);
+	transform: scale(1.25);
 }

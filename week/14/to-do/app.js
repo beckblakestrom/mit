@@ -22,6 +22,18 @@ function App() {
 		setTasks(newTasks);
 		setValue("");
 	};
+
+	const removeTask = (e) => {
+		const index = Number(e.target.id);
+		let temp = [...tasks];
+		temp.splice(index, 1);
+		setTasks(temp);
+	};
+
+	const removeAll = (e) => {
+		let temp = [];
+		setTasks(temp);
+	};
 	return (
 		<React.Fragment>
 			<header className="header">
@@ -29,9 +41,13 @@ function App() {
 				{/* <menuButton /> */}
 			</header>
 			<main className="main">
+				<div className="all">
+					<i onClick={removeAll} class="bi bi-check2-all clear"></i>
+				</div>
 				{tasks.map((task, i) => (
-					<div className="task" key={i}>
+					<div id={i} className="task" key={i}>
 						{task.text}
+						<i onClick={removeTask} class="bi bi-check2-square complete"></i>
 					</div>
 				))}
 			</main>
@@ -46,7 +62,7 @@ function App() {
 					/>
 					<button className="button" type="submit">
 						Add Task
-						<i class="add bi bi-plus"></i>
+						<i class="add bi bi-journal-plus"></i>
 					</button>
 				</form>
 			</footer>
