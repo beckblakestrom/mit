@@ -1,10 +1,9 @@
-import { button } from "react-bootstrap";
-
 function NavBar({ menuitems }) {
-	const { button } = ReactBootstrap;
-	const updatedList = menuitems.map((listItems, index) => {
-		return <li key={index.toString()}>{listItems}</li>;
-	});
+	const updatedList = menuitems
+		.filter((menuitems) => menuitems % 2)
+		.map((listItems, index) => {
+			return <button key={index.toString()}>{listItems}</button>;
+		});
 
 	return <ul style={{ listStyleType: "none" }}> {updatedList}</ul>;
 }
