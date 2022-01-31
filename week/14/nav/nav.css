@@ -23,3 +23,29 @@
 	box-shadow: hsl(222, 70%, 65%) 3px 3px 6px 0px inset,
 		hsla(222, 70%, 75%, 0.5) -3px -3px 6px 1px inset;
 }
+
+.button-white {
+	background-color: hsl(0, 0%, 97%);
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+	border: none;
+	padding: 1rem;
+	margin: 0.5rem;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	color: hsl(0, 0%, 10%);
+	transition: all 0.3s ease-out;
+	font-family: monospace;
+	outline: 1px solid hsl(0, 0%, 95%);
+}
+
+.button-white:hover {
+	cursor: pointer;
+	filter: invert(1);
+	letter-spacing: 5px;
+	outline-offset: 5px;
+	transform: skew(-5deg);
+}
+
+.button-white:active {
+	color: orangered;
+}

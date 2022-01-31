@@ -12,7 +12,7 @@ function NavBar({ stockitems }) {
 	};
 	const updatedList = stock.map((item, index) => {
 		return (
-			<button className="button" onClick={moveToCart} key={index}>
+			<button className="button-white" onClick={moveToCart} key={index}>
 				{item.name}:{item.instock}
 			</button>
 		);
@@ -20,7 +20,16 @@ function NavBar({ stockitems }) {
 	// note that React needs to have a single Parent
 	return (
 		<React.Fragment>
-			<ul style={{ listStyleType: "none" }}>{updatedList}</ul>
+			<ul
+				style={{
+					listStyleType: "none",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "start",
+				}}>
+				{updatedList}
+			</ul>
 			<h1>Shopping Cart</h1>
 		</React.Fragment>
 	);
