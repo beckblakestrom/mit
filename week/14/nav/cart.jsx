@@ -23,10 +23,8 @@ function NavBar({ stockitems }) {
 			<ul
 				style={{
 					listStyleType: "none",
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "center",
-					alignItems: "start",
+					display: "grid",
+					gridTemplateColumns: "1fr 1fr",
 				}}>
 				{updatedList}
 			</ul>
