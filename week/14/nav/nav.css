@@ -1,0 +1,25 @@
+.button {
+	background-color: hsl(222, 95%, 60%);
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem;
+	font-size: 1.5rem;
+	color: hsl(0, 0%, 98%);
+	transition: all 0.2s ease-out;
+	font-family: sans-serif;
+}
+
+.button:hover {
+	background-color: hsl(222, 70%, 50%);
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+	transform: scale(1.1) translateY(1px);
+	cursor: pointer;
+}
+
+.button:active {
+	background-color: hsl(222, 95%, 60%);
+	transform: translateY(2px);
+	box-shadow: hsl(222, 70%, 65%) 3px 3px 6px 0px inset,
+		hsla(222, 70%, 75%, 0.5) -3px -3px 6px 1px inset;
+}
