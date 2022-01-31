@@ -17,7 +17,7 @@ function NavBar({ stockitems }) {
 				className="button-white"
 				onClick={(e) => moveToCart({ itemID: item.id }, e)}
 				key={index}>
-				{item.name}:{item.instock}
+				{item.name} : {item.instock}
 			</button>
 		);
 	});
@@ -29,6 +29,7 @@ function NavBar({ stockitems }) {
 					listStyleType: "none",
 					display: "grid",
 					gridTemplateColumns: "1fr 1fr",
+					justifyItems: "center",
 				}}>
 				{updatedList}
 			</ul>

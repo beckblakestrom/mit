@@ -1,3 +1,7 @@
+#root {
+	width: 100%;
+}
+
 .button {
 	background-color: hsl(222, 95%, 60%);
 	border: none;
