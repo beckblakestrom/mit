@@ -1,4 +1,5 @@
 function ShoppingCart({ availableItems }) {
+	// react useState
 	const [stock, setStock] = React.useState(availableItems);
 	const [cart, setCart] = React.useState([]);
 	const moveToCart = (e) => {
