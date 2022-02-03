@@ -111,7 +111,7 @@
 
 .submit:hover {
 	filter: contrast(125%);
-	color: hsl(193, 95%, 68%);
+	color: purple;
 }
 
 .container {
@@ -166,7 +166,7 @@
 
 .bitcoin {
 	position: absolute;
-	right: 10%;
+	right: 6%;
 	bottom: 2%;
 	font-size: 1.5rem;
 	color: purple;
@@ -174,7 +174,7 @@
 
 .lock {
 	position: absolute;
-	right: 6%;
+	right: 2%;
 	bottom: 2%;
 	font-size: 1.5rem;
 	color: purple;

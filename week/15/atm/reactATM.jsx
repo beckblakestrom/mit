@@ -1,4 +1,4 @@
-// takes
+// callback function, takes onclick functions
 const ATMDeposit = ({ onChange, isDeposit }) => {
 	// Choices for warning
 	const choice = ["You are Depositing -", "You are Withdrawing -"];
@@ -15,11 +15,7 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 				type="number"
 				onChange={onChange}></input>
 			{/* submit button */}
-			<input
-				className="submit"
-				type="submit"
-				width="200"
-				value="Submit"></input>
+			<input className="submit" type="submit" value="Submit"></input>
 		</label>
 	);
 };
