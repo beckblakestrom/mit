@@ -6,7 +6,7 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 	// html return
 	return (
 		<label className="input-container">
-			{/* choice[0] for deposit or choice[1] for withdrawl */}
+			{/* choice[0] for deposit or choice[1] for withdrawal */}
 			<h3 className="warning"> {choice[Number(!isDeposit)]}</h3>
 			{/* value input */}
 			<input
@@ -27,7 +27,7 @@ const Account = () => {
 	// total
 	const [totalState, setTotalState] = React.useState(0);
 
-	// deposit or withdrawl
+	// deposit or withdrawal
 	const [isDeposit, setIsDeposit] = React.useState(true);
 
 	// current balance printout
@@ -41,12 +41,16 @@ const Account = () => {
 
 	// handles submit button
 	const handleSubmit = () => {
-		// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
-		let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
-		// change totalState to above newTotal
-		setTotalState(newTotal);
-		// prevents page reload
 		event.preventDefault();
+		if (isDeposit == false && deposit > totalState) {
+			alert("insufficient funds");
+			newTotal = totalState;
+		} else {
+			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
+			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
+			// change totalState to above newTotal
+			setTotalState(newTotal);
+		}
 	};
 
 	// html returned
@@ -61,12 +65,12 @@ const Account = () => {
 			{/* please select header */}
 			<h2 className="select">Please Select:</h2>
 
-			{/* buttons to select deposit or withdrawl */}
+			{/* buttons to select deposit or withdrawal */}
 			<button className="button button-1" onClick={() => setIsDeposit(true)}>
 				Deposit <i class="icon icon-1 bi bi-cash-coin"></i>
 			</button>
 			<button className="button button-2" onClick={() => setIsDeposit(false)}>
-				Withdrawl <i class="icon icon-2 bi bi-cash-stack"></i>
+				Withdrawal <i class="icon icon-2 bi bi-cash-stack"></i>
 			</button>
 
 			{/*  */}
