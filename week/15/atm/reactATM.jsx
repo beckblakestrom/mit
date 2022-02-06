@@ -23,7 +23,7 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 // main app
 const Account = () => {
 	let deposit = 0; // state of this transaction
-
+	console.log(`initial deposit = ${deposit}`);
 	// total
 	const [totalState, setTotalState] = React.useState(0);
 
@@ -37,6 +37,7 @@ const Account = () => {
 	const handleChange = (event) => {
 		// changes deposit amount
 		deposit = Number(event.target.value);
+		console.log(`after handleChange deposit = ${deposit}`);
 	};
 
 	// handles submit button
@@ -50,14 +51,15 @@ const Account = () => {
 			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
 			// change totalState to above newTotal
 			setTotalState(newTotal);
+			console.log(`after submit deposit = ${deposit}`);
 		}
 	};
 
 	// html returned
 	return (
 		<form className="container" onSubmit={handleSubmit}>
-			<i class="bitcoin bi bi-currency-bitcoin"></i>
-			<i class="lock bi bi-file-lock"></i>
+			<i className="bitcoin bi bi-currency-bitcoin"></i>
+			<i className="lock bi bi-file-lock"></i>
 
 			{/* welcome header */}
 			<h1 className="welcome">Welcome to React Bank</h1>
@@ -67,10 +69,10 @@ const Account = () => {
 
 			{/* buttons to select deposit or withdrawal */}
 			<button className="button button-1" onClick={() => setIsDeposit(true)}>
-				Deposit <i class="icon icon-1 bi bi-cash-coin"></i>
+				Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
 			</button>
 			<button className="button button-2" onClick={() => setIsDeposit(false)}>
-				Withdrawal <i class="icon icon-2 bi bi-cash-stack"></i>
+				Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
 			</button>
 
 			{/*  */}
