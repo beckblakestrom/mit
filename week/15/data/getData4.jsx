@@ -86,26 +86,27 @@ const dataFetchReducer = (state, action) => {
 };
 // App that gets data from Hacker News url
 function App() {
-	const { Fragment, useState, useEffect, useReducer } = React;
-	const [query, setQuery] = useState("MIT");
-	const [currentPage, setCurrentPage] = useState(1);
+	const { Fragment, useState, useEffect, useReducer } = React; //import react
+	const [query, setQuery] = useState("MIT"); //search
+	const [currentPage, setCurrentPage] = useState(1); //page
 	const pageSize = 10;
 	const [{ data, isLoading, isError }, doFetch] = useDataApi(
 		"https://hn.algolia.com/api/v1/search?query=MIT",
 		{
 			hits: [],
 		}
-	);
+	); //load data
 	const handlePageChange = (e) => {
 		setCurrentPage(Number(e.target.textContent));
-	};
+	}; //handle current page
 	let page = data.hits;
 	if (page.length >= 1) {
 		page = paginate(page, currentPage, pageSize);
 		console.log(`currentPage: ${currentPage}`);
-	}
+	} //load more pages
 	return (
 		<Fragment>
+			{/* input */}
 			<form
 				onSubmit={(event) => {
 					doFetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
@@ -119,6 +120,7 @@ function App() {
 				<button type="submit">Search</button>
 			</form>
 
+			{/* search results */}
 			{isError && <div>Something went wrong ...</div>}
 
 			{isLoading ? (
@@ -132,6 +134,8 @@ function App() {
 					))}
 				</ul>
 			)}
+
+			{/* page numbers */}
 			<Pagination
 				items={data.hits}
 				pageSize={pageSize}
