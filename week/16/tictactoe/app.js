@@ -1,4 +1,7 @@
-function App() {
+const Board = () => {
+	let player = 1;
+	let status = `Player ${player}`;
+
 	return (
 		<React.Fragment>
 			<div className="game-board">
@@ -8,6 +11,6 @@ function App() {
 			</div>
 		</React.Fragment>
 	);
-}
+};
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Board />, document.getElementById("root"));
