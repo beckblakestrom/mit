@@ -1,7 +1,11 @@
 function App() {
 	return (
 		<React.Fragment>
-			<div className="game-container"></div>
+			<div className="game-board">
+				<div id="info">
+					<h1> {status} </h1>
+				</div>
+			</div>
 		</React.Fragment>
 	);
 }

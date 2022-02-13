@@ -12,8 +12,8 @@
 	align-items: center;
 }
 
-.game-container {
-	height: 300px;
+.game-board {
+	height: 600px;
 	aspect-ratio: 1/1;
 	background-color: hsl(165, 65%, 75%);
 
