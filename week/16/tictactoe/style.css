@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#root {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-container {
+	height: 300px;
+	aspect-ratio: 1/1;
+	background-color: hsl(165, 65%, 75%);
+
+	font-family: corpulent-web, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
