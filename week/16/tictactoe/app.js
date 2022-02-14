@@ -1,10 +1,14 @@
 const Board = () => {
-	let player = 1;
+	const [player, Setplayer] = React.useState(-1);
 	let status = `Player ${player}`;
 
 	return (
 		<React.Fragment>
-			<div className="game-board">
+			<div
+				onClick={(e) => {
+					Setplayer(player + 1);
+				}}
+				className="game-board">
 				<div id="info">
 					<h1> {status} </h1>
 				</div>
