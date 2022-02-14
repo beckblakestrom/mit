@@ -1,12 +1,19 @@
 const Board = () => {
-	const [player, Setplayer] = React.useState(0);
-	let status = `Player ${player}`;
+	const myPlayers = [1, 2];
+	const [player, setPlayer] = React.useState(0);
+	let status = `Player ${myPlayers[player]}`;
+
+	function changeClass(e) {
+		let bgg = e.target;
+		bgg.classList.toggle("background-change");
+	}
 
 	return (
 		<React.Fragment>
 			<div
 				onClick={(e) => {
-					Setplayer(1 - player);
+					setPlayer(1 - player);
+					changeClass(e);
 				}}
 				className="game-board">
 				<div id="info">
