@@ -13,7 +13,7 @@
 }
 
 .game-board {
-	height: 600px;
+	width: 95%;
 	aspect-ratio: 1/1;
 	background-color: hsl(165, 0%, 16%);
 
