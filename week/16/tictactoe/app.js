@@ -4,6 +4,10 @@ const Square = ({ id, player }) => {
 	const getColor = () => {
 		return palette[Math.floor(Math.random() * 3)];
 	};
+	const [mounted, setMounted] = React.useState(true);
+	const toggle = () => {
+		setMounted(!mounted);
+	};
 	React.useEffect(() => {
 		console.log(`Render ${id}`);
 		return () => {
@@ -17,7 +21,8 @@ const Square = ({ id, player }) => {
 	return (
 		<button
 			onClick={(e) => {
-				alert(`${id}`);
+				setColor(getColor());
+				e.target.style.background = color;
 			}}
 			className="square">
 			{id}
