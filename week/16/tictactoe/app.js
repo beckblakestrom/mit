@@ -1,5 +1,23 @@
 const Square = ({ id }) => {
-	return <button className="square">{id}</button>;
+	const [color, setColor] = React.useState("white");
+	const palette = ["red", "blue", "green"];
+	const getColor = () => {
+		return palette[Math.floor(Math.random() * 3)];
+	};
+	function squareChange(e) {
+		let square = e.target;
+		square.classList.toggle("square-change");
+	}
+	return (
+		<button
+			onClick={(e) => {
+				setColor(getColor());
+				e.target.style.background = color;
+			}}
+			className="square">
+			{id}
+		</button>
+	);
 };
 
 const Board = () => {

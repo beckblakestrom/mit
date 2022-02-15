@@ -15,7 +15,7 @@
 .game-board {
 	height: 600px;
 	aspect-ratio: 1/1;
-	background-color: hsl(165, 65%, 75%);
+	background-color: hsl(165, 0%, 16%);
 
 	transition: all 0.2s ease-out;
 
@@ -38,8 +38,7 @@
 }
 
 .grid-row {
-	background-color: black;
-	opacity: 0.2;
+	opacity: 0.8;
 
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -48,8 +47,15 @@
 }
 
 .square {
+	border: none;
+	background-color: hsl(325, 50%, 50%);
 	font-size: 3rem;
 	font-family: corpulent-web, sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	color: white;
+}
+
+.square-change {
+	background-color: hsl(222, 75%, 55%);
 }
