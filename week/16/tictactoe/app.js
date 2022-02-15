@@ -4,11 +4,16 @@ const Square = ({ id, player }) => {
 	const getColor = () => {
 		return palette[Math.floor(Math.random() * 3)];
 	};
+	React.useEffect(() => {
+		console.log(`Render ${id}`);
+		return () => {
+			console.log(`Unmounting ${id}`);
+		};
+	});
 	function squareChange(e) {
 		let square = e.target;
 		square.classList.toggle("square-change");
 	}
-	console.log(`rendered square ${id}`);
 	return (
 		<button
 			onClick={(e) => {
