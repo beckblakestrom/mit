@@ -1,5 +1,5 @@
-const Square = () => {
-	return <button className="square"></button>;
+const Square = ({ id }) => {
+	return <button className="square">{id}</button>;
 };
 
 const Board = () => {
@@ -7,7 +7,7 @@ const Board = () => {
 	const [player, setPlayer] = React.useState(0);
 	let status = `Player ${myPlayers[player]}`;
 	function renderSquare(i) {
-		return <Square></Square>;
+		return <Square id={i}></Square>;
 	}
 
 	function changeClass(e) {
