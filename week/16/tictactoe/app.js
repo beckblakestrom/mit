@@ -1,4 +1,4 @@
-const Square = ({ id, player, newState, changeBoard }) => {
+const Square = ({ id, player, newState, changeBoard, resetBoard }) => {
 	const [status, setStatus] = React.useState(null);
 	const xo = ["o", "x"];
 
@@ -11,17 +11,19 @@ const Square = ({ id, player, newState, changeBoard }) => {
 		if (player === 1) {
 			let square = e.target;
 			square.classList.add("square-blue");
+			console.log(`status ${status}`);
 		}
 		if (player === 0) {
 			let square = e.target;
 			square.classList.add("square-red");
+			console.log(`status ${status}`);
 		}
 	}
 	return (
 		<button
 			onClick={(e) => {
 				squareChange(e);
-				let nextPlayer = newState({ id: id });
+				let nextPlayer = newState(id);
 				setStatus(nextPlayer);
 			}}
 			className="square">
@@ -31,15 +33,6 @@ const Square = ({ id, player, newState, changeBoard }) => {
 };
 
 const Board = () => {
-	const [mounted, setMounted] = React.useState(true);
-	const [random, setRandom] = React.useState(0);
-	const reRender = () => {
-		setRandom(Math.random());
-	};
-	const toggle = () => {
-		setMounted(!mounted);
-	};
-
 	//
 	const changeBoard = (e) => {
 		let bgg = e.target.parentNode;
@@ -48,20 +41,22 @@ const Board = () => {
 	};
 	//
 
-	const [state, setState] = React.useState([]);
+	const [state, setState] = React.useState(Array(9).fill(null));
 	const myPlayers = ["One", "Two"];
 	const [player, setPlayer] = React.useState(0);
+
 	let status = `Player ${myPlayers[player]}'s Turn`;
+	let winner = checkWinner(state);
+	if (winner != null) status = `Player ${winner} wins`;
 
-	const newState = (object) => {
+	const newState = (idOfSquare) => {
+		let thePlayer = player;
+		state[idOfSquare] = player;
+		setState(state);
 		let nextPlayer = 1 - player;
-
 		setPlayer(nextPlayer);
-
-		setState([...state, object]);
-
 		console.log(`${JSON.stringify(state)}`);
-		return nextPlayer;
+		return thePlayer;
 	};
 
 	function renderSquare(i) {
@@ -70,30 +65,36 @@ const Board = () => {
 				id={i}
 				player={player}
 				changeBoard={changeBoard}
+				resetBoard={resetBoard}
 				newState={newState}></Square>
 		);
+	}
+
+	function resetBoard() {
+		console.log("reset");
 	}
 
 	return (
 		<React.Fragment>
 			<div onClick={(e) => {}} className="game-board">
 				<div className="grid-row">
-					{mounted && renderSquare(0)}
-					{mounted && renderSquare(1)}
-					{mounted && renderSquare(2)}
+					{renderSquare(0)}
+					{renderSquare(1)}
+					{renderSquare(2)}
 				</div>
 				<div className="grid-row">
-					{mounted && renderSquare(3)}
-					{mounted && renderSquare(4)}
-					{mounted && renderSquare(5)}
+					{renderSquare(3)}
+					{renderSquare(4)}
+					{renderSquare(5)}
 				</div>
 				<div className="grid-row">
-					{mounted && renderSquare(6)}
-					{mounted && renderSquare(7)}
-					{mounted && renderSquare(8)}
+					{renderSquare(6)}
+					{renderSquare(7)}
+					{renderSquare(8)}
 				</div>
 				<div id="info">
 					<h1 className="player"> {status} </h1>
+					<button onClick={resetBoard}>Reset Board</button>
 				</div>
 			</div>
 		</React.Fragment>
