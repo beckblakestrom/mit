@@ -1,29 +1,20 @@
-const Square = ({ id, player, newState, changeClass }) => {
-	const [color, setColor] = React.useState("white");
+const Square = ({ id, player, newState, changeBoard }) => {
 	const [status, setStatus] = React.useState(null);
-	const xo = ["x", "o"];
-	const palette = ["red", "blue", "green"];
-	const getColor = () => {
-		return palette[Math.floor(Math.random() * 3)];
-	};
+	const xo = ["o", "x"];
+
 	const [mounted, setMounted] = React.useState(true);
 	const toggle = () => {
 		setMounted(!mounted);
 	};
-	React.useEffect(() => {
-		console.log(`Render ${id}`);
-		return () => {
-			console.log(`Unmounting ${id}`);
-		};
-	});
+
 	function squareChange(e) {
 		if (player === 1) {
 			let square = e.target;
-			square.classList.toggle("square-blue");
+			square.classList.add("square-blue");
 		}
 		if (player === 0) {
 			let square = e.target;
-			square.classList.toggle("square-red");
+			square.classList.add("square-red");
 		}
 	}
 	return (
@@ -50,7 +41,7 @@ const Board = () => {
 	};
 
 	//
-	const changeClass = (e) => {
+	const changeBoard = (e) => {
 		let bgg = e.target.parentNode;
 		let newBoard = bgg.parentNode;
 		newBoard.classList.toggle("background-change");
@@ -64,10 +55,12 @@ const Board = () => {
 
 	const newState = (object) => {
 		let nextPlayer = 1 - player;
+
 		setPlayer(nextPlayer);
+
 		setState([...state, object]);
-		console.log(`player #${player}`);
-		console.log(`adding state ${JSON.stringify(state)}`);
+
+		console.log(`${JSON.stringify(state)}`);
 		return nextPlayer;
 	};
 
@@ -76,7 +69,7 @@ const Board = () => {
 			<Square
 				id={i}
 				player={player}
-				changeClass={changeClass}
+				changeBoard={changeBoard}
 				newState={newState}></Square>
 		);
 	}
@@ -90,14 +83,14 @@ const Board = () => {
 					{mounted && renderSquare(2)}
 				</div>
 				<div className="grid-row">
-					{mounted && renderSquare(0)}
-					{mounted && renderSquare(1)}
-					{mounted && renderSquare(2)}
+					{mounted && renderSquare(3)}
+					{mounted && renderSquare(4)}
+					{mounted && renderSquare(5)}
 				</div>
 				<div className="grid-row">
-					{mounted && renderSquare(0)}
-					{mounted && renderSquare(1)}
-					{mounted && renderSquare(2)}
+					{mounted && renderSquare(6)}
+					{mounted && renderSquare(7)}
+					{mounted && renderSquare(8)}
 				</div>
 				<div id="info">
 					<h1 className="player"> {status} </h1>
