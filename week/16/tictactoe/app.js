@@ -1,5 +1,7 @@
-const Square = ({ id, player, newState }) => {
+const Square = ({ id, player, newState, changeClass }) => {
 	const [color, setColor] = React.useState("white");
+	const [status, setStatus] = React.useState(null);
+	const xo = ["x", "o"];
 	const palette = ["red", "blue", "green"];
 	const getColor = () => {
 		return palette[Math.floor(Math.random() * 3)];
@@ -15,18 +17,24 @@ const Square = ({ id, player, newState }) => {
 		};
 	});
 	function squareChange(e) {
-		let square = e.target;
-		square.classList.toggle("square-change");
+		if (player === 1) {
+			let square = e.target;
+			square.classList.toggle("square-blue");
+		}
+		if (player === 0) {
+			let square = e.target;
+			square.classList.toggle("square-red");
+		}
 	}
 	return (
 		<button
 			onClick={(e) => {
-				setColor(getColor());
-				e.target.style.background = color;
-				newState({ id: id, color: color });
+				squareChange(e);
+				let nextPlayer = newState({ id: id });
+				setStatus(nextPlayer);
 			}}
 			className="square">
-			{id}
+			{xo[status]}
 		</button>
 	);
 };
@@ -42,43 +50,56 @@ const Board = () => {
 	};
 
 	//
-	function changeClass(e) {
-		let bgg = e.target;
-		bgg.classList.toggle("background-change");
-	}
+	const changeClass = (e) => {
+		let bgg = e.target.parentNode;
+		let newBoard = bgg.parentNode;
+		newBoard.classList.toggle("background-change");
+	};
 	//
 
 	const [state, setState] = React.useState([]);
 	const myPlayers = ["One", "Two"];
 	const [player, setPlayer] = React.useState(0);
-	let status = `Player ${myPlayers[player]}`;
+	let status = `Player ${myPlayers[player]}'s Turn`;
+
 	const newState = (object) => {
 		let nextPlayer = 1 - player;
 		setPlayer(nextPlayer);
 		setState([...state, object]);
+		console.log(`player #${player}`);
 		console.log(`adding state ${JSON.stringify(state)}`);
 		return nextPlayer;
 	};
 
 	function renderSquare(i) {
-		return <Square id={i} player={player} newState={newState}></Square>;
+		return (
+			<Square
+				id={i}
+				player={player}
+				changeClass={changeClass}
+				newState={newState}></Square>
+		);
 	}
 
 	return (
 		<React.Fragment>
-			<div
-				onClick={(e) => {
-					changeClass(e);
-				}}
-				className="game-board">
+			<div onClick={(e) => {}} className="game-board">
+				<div className="grid-row">
+					{mounted && renderSquare(0)}
+					{mounted && renderSquare(1)}
+					{mounted && renderSquare(2)}
+				</div>
+				<div className="grid-row">
+					{mounted && renderSquare(0)}
+					{mounted && renderSquare(1)}
+					{mounted && renderSquare(2)}
+				</div>
 				<div className="grid-row">
 					{mounted && renderSquare(0)}
 					{mounted && renderSquare(1)}
 					{mounted && renderSquare(2)}
 				</div>
 				<div id="info">
-					<button onClick={toggle}>Show/Hide Row</button>
-					<button onClick={reRender}>Re-Render</button>
 					<h1 className="player"> {status} </h1>
 				</div>
 			</div>
