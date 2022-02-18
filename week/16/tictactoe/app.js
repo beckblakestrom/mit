@@ -25,6 +25,7 @@ const Square = ({ id, player, newState, changeBoard, resetBoard }) => {
 				squareChange(e);
 				let nextPlayer = newState(id);
 				setStatus(nextPlayer);
+				console.log("hello");
 			}}
 			className="square">
 			{xo[status]}
