@@ -39,6 +39,7 @@ const Board = () => {
 		let bgg = e.target.parentNode;
 		let newBoard = bgg.parentNode;
 		newBoard.classList.toggle("background-change");
+		console.log("Hello");
 	};
 	//
 
