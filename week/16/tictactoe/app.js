@@ -47,7 +47,9 @@ const Board = () => {
 
 	let status = `Player ${myPlayers[player]}'s Turn`;
 	let winner = checkWinner(state);
-	if (winner != null) status = `Player ${winner} wins`;
+	if (winner != null) {
+		status = `Player ${myPlayers[winner]} wins`;
+	}
 
 	const newState = (idOfSquare) => {
 		let thePlayer = player;

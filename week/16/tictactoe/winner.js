@@ -12,7 +12,7 @@ function checkWinner(state) {
 
 	for (let i = 0; i < win.length; i++) {
 		const [a, b, c] = win[i];
-		if (state[a] == state[b] && state[a] == state[c] && state[a]) {
+		if (state[a] == state[b] && state[a] == state[c]) {
 			return state[a];
 		}
 	}
