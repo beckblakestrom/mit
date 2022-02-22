@@ -12,7 +12,9 @@ function checkWinner(state) {
 
 	for (let i = 0; i < win.length; i++) {
 		const [a, b, c] = win[i];
-		if (state[a] == state[b] && state[a] == state[c]) {
+		if (state[a] == state[b] && state[a] == state[c] && state[a] != null) {
+			console.log(`winner is ${win[i]}`);
+			gameOver(win[i]);
 			return state[a];
 		}
 	}

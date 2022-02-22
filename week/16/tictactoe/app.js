@@ -25,6 +25,7 @@ const Square = ({ id, player, newState, changeBoard, resetBoard }) => {
 				squareChange(e);
 				let nextPlayer = newState(id);
 				setStatus(nextPlayer);
+				console.log(id);
 			}}
 			className="square">
 			{xo[status]}
@@ -38,6 +39,14 @@ const Board = () => {
 		let bgg = e.target.parentNode;
 		let newBoard = bgg.parentNode;
 		newBoard.classList.toggle("background-change");
+	};
+	//
+
+	const gameOver = (winArray) => {
+		let [winner1, winner2, winner3] = winArray;
+		console.log(
+			`winner 1 is ${winner1},winner 2 is ${winner2},winner 3 is ${winner3},`
+		);
 	};
 	//
 
@@ -68,12 +77,14 @@ const Board = () => {
 				player={player}
 				changeBoard={changeBoard}
 				resetBoard={resetBoard}
-				newState={newState}></Square>
+				newState={newState}
+				gameOver={gameOver}></Square>
 		);
 	}
 
 	function resetBoard() {
 		console.log("reset");
+		setState(Array(9).fill(null));
 	}
 
 	return (
