@@ -1,0 +1,18 @@
+.my-container {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	place-items: center;
+	gap: 1rem;
+	margin: 1rem;
+}
+
+.book-img {
+	padding: 1rem;
+	outline: 2px solid hsla(0, 0%, 15%, 0.5);
+	outline-offset: -0.5rem;
+}
