@@ -5,7 +5,7 @@ const card = (
 				<img
 					src="/images/latest_big_pale.jpg"
 					className="img-fluid rounded-start"
-					alt="herllo"
+					alt="hello"
 				/>
 			</div>
 			<div className="col-md-8">
