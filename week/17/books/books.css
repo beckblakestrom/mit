@@ -98,7 +98,6 @@ a:hover {
 
 .book:hover > * {
 	z-index: +1;
-	cursor: initial;
 }
 
 .book-img {
