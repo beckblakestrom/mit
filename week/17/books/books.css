@@ -53,6 +53,7 @@ a {
 a:hover {
 	cursor: pointer;
 	filter: brightness(1.5);
+	text-decoration: underline;
 }
 
 .my-container {
@@ -97,12 +98,13 @@ a:hover {
 
 .book:hover > * {
 	z-index: +1;
+	cursor: initial;
 }
 
 .book-img {
 	object-fit: contain;
 	height: 50%;
-	width: 70%;
+	width: 75%;
 	align-self: center;
 }
 
@@ -125,9 +127,12 @@ a:hover {
 	font-size: 2.2rem;
 }
 
+.book-author-by {
+	color: hsl(0, 0%, 65%);
+}
+
 .book-author-name {
 	color: hsl(315, 50%, 25%);
-	text-decoration: underline;
 }
 
 .book-genre {
