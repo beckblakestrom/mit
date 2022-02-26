@@ -18,8 +18,19 @@
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 	</head>
 	<body>
-		<div id="books" class="my-container"></div>
+		<div class="my-container" id="my-container"></div>
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script
+			src="https://unpkg.com/react@17/umd/react.development.js"
+			crossorigin
+		></script>
+		<script
+			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+			crossorigin
+		></script>
 
-		<script type="module" src="./main.js"></script>
+		<!-- Load our React component. -->
+		<script src="books_main.js" defer type="text/babel"></script>
+		<script src="./index.js" defer type="text/babel"></script>
 	</body>
 </html>

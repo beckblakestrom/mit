@@ -10,25 +10,25 @@
 		},
 		{
 			"source": "/images/grass.jpg",
-			"title": "Dawn of an Empire",
-			"author": "J.K. Rawling",
-			"genre": "fantasy",
+			"title": "New Age Racing",
+			"author": "Andrew Jackson",
+			"genre": "Automotive",
 			"description": "As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from ",
 			"price": "$12.99"
 		},
 		{
 			"source": "/images/grass.jpg",
-			"title": "Dawn of an Empire",
-			"author": "J.K. Rawling",
-			"genre": "fantasy",
+			"title": "Apple Pie",
+			"author": "Brandon Baker",
+			"genre": "Cook Books",
 			"description": "As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from ",
 			"price": "$12.99"
 		},
 		{
 			"source": "/images/grass.jpg",
-			"title": "Dawn of an Empire",
-			"author": "J.K. Rawling",
-			"genre": "fantasy",
+			"title": "Thinking Man",
+			"author": "Aristotle",
+			"genre": "Classics",
 			"description": "As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from ",
 			"price": "$12.99"
 		},
