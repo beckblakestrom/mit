@@ -82,9 +82,19 @@ a:hover {
 	transition: all 1s ease-out;
 }
 
-/* .book:hover {
-	background-color: hsla(0, 0%, 70%, 0.2);
-} */
+@media only screen and (max-width: 975px) {
+	.my-container {
+		width: 100%;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.my-container {
+		width: 100%;
+		grid-template-columns: 100%;
+	}
+}
 
 .book:hover .book-img {
 	position: absolute;
