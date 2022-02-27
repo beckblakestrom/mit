@@ -15,7 +15,17 @@ function App() {
 
 	return (
 		<React.Fragment>
-			{loaded && data.books.map((book, i) => <Book data={book} key={i}></Book>)}
+			{loaded &&
+				data.books.map((book, i) => (
+					<new-book
+						source={book.source}
+						title={book.title}
+						author={book.author}
+						genre={book.genre}
+						description={book.description}
+						price={book.price}
+						key={i}></new-book>
+				))}
 		</React.Fragment>
 	);
 }
