@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://use.typekit.net/jwv2xzz.css" />
+	</head>
+	<body>
+		<nav class="nav">
+			<img src="/images/favicon.png" alt="B logo" class="logo" />
+			<div class="link-container">
+				<a href="" class="link">home</a>
+				<a href="" class="link">about</a>
+				<a href="" class="link">contact</a>
+				<a href="" class="link">blog</a>
+			</div>
+		</nav>
+
+		<div class="container">
+			<button onclick="loadPage('blog.html')" class="button">blog</button>
+			<button onclick="loadPage('about.html')" class="button">about</button>
+			<button onclick="loadPage('contact.html')" class="button">contact</button>
+			<div id="content"></div>
+		</div>
+
+		<script>
+			async function loadPage(page) {
+				const response = await fetch(page);
+				const content = await response.text();
+				const element = document.getElementById("content");
+				element.innerHTML = content;
+			}
+		</script>
+	</body>
+</html>

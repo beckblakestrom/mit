@@ -1,0 +1,112 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* changes base font to 10px */
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.3s ease-out;
+}
+
+a:hover {
+	cursor: pointer;
+	color: hsl(222, 75%, 65%);
+	transform: scale(1.1);
+}
+
+.nav {
+	position: relative;
+	width: 100%;
+	height: 10vh;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	background-color: hsla(0, 0%, 3%, 0.9);
+	box-shadow: 0px 3px 10px hsla(0, 0%, 3%, 0.2);
+}
+
+.logo {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.link-container {
+	width: 40%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.link {
+	color: hsl(0, 0%, 85%);
+	font-size: 2rem;
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 2px;
+}
+
+.container {
+	padding: 2rem;
+}
+
+.button {
+	padding: 0.5rem 3rem;
+	border-radius: 5px;
+	font-size: 2rem;
+	background-color: lightblue;
+	font-family: futura-pt, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	transition: all 0.2s ease-out;
+}
+
+.button:hover {
+	filter: brightness(1.1);
+	cursor: pointer;
+	transform: translateY(-2px);
+}
