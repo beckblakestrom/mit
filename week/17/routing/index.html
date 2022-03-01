@@ -19,16 +19,11 @@
 			</div>
 		</nav>
 		<div class="page-container">
-			<div class="container">
-				<div class="button-container">
-					<a href="#/about" class="button">about</a>
-					<a href="#/contact" class="button">contact</a>
-					<a href="#/blog" class="button">blog</a>
-				</div>
-			</div>
+			<div class="container"></div>
 			<div id="content"></div>
 		</div>
 		<script>
+			var history = "";
 			var routes = {
 				"": "home.html",
 				"/": "home.html",
@@ -40,22 +35,45 @@
 			function router() {
 				console.log(location.hash);
 
+				var innerElement = "";
 				// get requested page
 				var link = window.location.hash;
 
+				var count = link.split("/").length - 1;
+
+				if (count > 1) {
+					innerElement = link.split("/")[2];
+
+					link = "#/" + link.split("/")[1];
+				}
+
+				if (history === link && innerElement) {
+					scrollIntoView(innerElement);
+					history = link;
+					return;
+				}
+				history = link;
 				// get path (route) for page
 				var route = routes[link];
 
 				// if route exists, load page
-				if (route) loadPage(route);
+				if (route) loadPage(route, innerElement);
 			}
 			router();
 
-			async function loadPage(url) {
+			async function loadPage(url, innerElement) {
 				const res = await fetch(url);
 				const content = await res.text();
 				const element = document.getElementById("content");
 				element.innerHTML = content;
+
+				if (innerElement) {
+					scrollIntoView(innerElement);
+				}
+			}
+
+			function scrollIntoView(id) {
+				document.getElementById(id).scrollIntoView();
 			}
 
 			window.addEventListener("hashchange", router);
