@@ -7,6 +7,7 @@ function Spa() {
 		<HashRouter>
 			<div>
 				<h1>Routing -- Hello World</h1>
+				<Link to="/">Home</Link>
 				<Link to="/about/">About</Link>
 				<Link to="/products/">Products</Link>
 				<hr></hr>
