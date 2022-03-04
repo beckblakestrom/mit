@@ -3,7 +3,7 @@ function Home() {
 	return (
 		<div>
 			<h1>Home Component</h1>
-			{JSON.stringify(ctx.users)};
+			{ctx.users[0].name}
 		</div>
 	);
 }
