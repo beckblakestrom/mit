@@ -6,24 +6,54 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Bad Bank</title>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<link
+			rel="shortcut icon"
+			href="/images/Bitcoin.svg.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://use.typekit.net/jwv2xzz.css" />
 	</head>
 	<body>
 		<div id="root"></div>
-		<!-- Load React. -->
-		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<!-- Load React and React DOM -->
+		<!-- See https://reactjs.org/docs/add-react-to-a-website.html to learn more -->
 		<script
-			src="https://unpkg.com/react@17/umd/react.development.js"
+			src="https://unpkg.com/react@>=16.8/umd/react.development.js"
 			crossorigin
 		></script>
 		<script
-			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+			src="https://unpkg.com/react-dom@>=16.8/umd/react-dom.development.js"
 			crossorigin
 		></script>
 
-		<!-- Load our React component. -->
-		<script src="./home.js" defer type="text/babel"></script>
-		<script src="./about.js" defer type="text/babel"></script>
-		<script src="./products.js" defer type="text/babel"></script>
-		<script src="./index.js" defer type="text/babel"></script>
+		<!-- Load history -->
+		<script
+			src="https://unpkg.com/history@5/umd/history.development.js"
+			crossorigin
+		></script>
+
+		<!-- Load React Router and React Router DOM -->
+		<script
+			src="https://unpkg.com/react-router@6/umd/react-router.development.js"
+			crossorigin
+		></script>
+		<script
+			src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js"
+			crossorigin
+		></script>
+
+		<!-- Load our React components -->
+		<script src="./js/about.js" defer type="text/babel"></script>
+		<script src="./js/alldata.js" defer type="text/babel"></script>
+		<script src="./js/balance.js" defer type="text/babel"></script>
+		<script src="./js/createaccount.js" defer type="text/babel"></script>
+		<script src="./js/deposit.js" defer type="text/babel"></script>
+		<script src="./js/home.js" defer type="text/babel"></script>
+		<script src="./js/login.js" defer type="text/babel"></script>
+		<script src="./js/products.js" defer type="text/babel"></script>
+		<script src="./js/withdraw.js" defer type="text/babel"></script>
+		<script src="./js/nav.js" defer type="text/babel"></script>
+		<script src="./js/index.js" defer type="text/babel"></script>
 	</body>
 </html>
