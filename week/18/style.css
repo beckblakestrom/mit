@@ -78,6 +78,17 @@ a:hover {
 	letter-spacing: 0.5rem;
 	color: hsl(0, 0%, 50%);
 	position: relative;
+	white-space: nowrap;
+	transition: all 0.3s ease-out;
+}
+
+.logo::before {
+	content: "home";
+	position: absolute;
+	opacity: 0;
+	right: 0%;
+	color: hsla(0, 0%, 70%, 0.5);
+	transition: all 0.3s ease-out;
 }
 
 .logo::after {
@@ -85,12 +96,24 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	left: 1%;
-	width: 80%;
+	width: 75%;
 	height: 3px;
-	background-color: #e98f46;
-	white-space: nowrap;
+	background-color: hsl(27, 79%, 59%);
+	transition: all 0.3s ease-out;
 }
 
+.logo:hover {
+	color: hsl(0, 0%, 25%);
+}
+
+.logo:hover::before {
+	opacity: 1;
+	right: -60%;
+}
+
+.logo:hover::after {
+	width: 156%;
+}
 .link-container {
 	display: flex;
 	gap: 4rem;
@@ -107,10 +130,22 @@ a:hover {
 }
 
 .link:hover {
-	color: orangered;
+	color: hsl(27, 79%, 59%);
 	opacity: 1;
 }
 
+.secondary-nav {
+	position: absolute;
+	top: 100%;
+	right: 5%;
+	background-color: hsl(0, 0%, 25%);
+	display: flex;
+	gap: 4rem;
+	padding: 1rem 4rem;
+	border-bottom-left-radius: 100vh;
+	border-bottom-right-radius: 100vh;
+	box-shadow: 0 1px 3px hsla(0, 0%, 6%, 0.1);
+}
 #root {
 	width: 100%;
 	padding-top: 12vh;

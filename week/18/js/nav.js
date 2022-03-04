@@ -8,14 +8,8 @@ function Nav() {
 				<Link className="link" to="/">
 					Home
 				</Link>
-				<Link className="link" to="/createaccount/">
-					Create Account
-				</Link>
-				<Link className="link" to="/login/">
-					Login
-				</Link>
 				<Link className="link" to="/alldata/">
-					All Data
+					Account
 				</Link>
 				<Link className="link" to="/balance/">
 					Balance
@@ -25,6 +19,14 @@ function Nav() {
 				</Link>
 				<Link className="link" to="/withdraw/">
 					Withdraw
+				</Link>
+			</div>
+			<div className="secondary-nav">
+				<Link className="link" to="/createaccount/">
+					Create Account
+				</Link>
+				<Link className="link" to="/login/">
+					Login
 				</Link>
 			</div>
 		</div>
