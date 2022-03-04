@@ -61,13 +61,14 @@ a:hover {
 	left: 0;
 	width: 100%;
 	height: 10vh;
-	background-color: hsla(0, 0%, 98%, 0.95);
-	box-shadow: 0 1px 3px hsla(0, 0%, 6%, 0.1);
+	background-color: hsla(0, 0%, 96%, 0.95);
+	box-shadow: 0 1px 1px hsla(0, 0%, 6%, 0.1);
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2rem 4rem;
+	z-index: +1;
 }
 
 .logo {
@@ -76,7 +77,7 @@ a:hover {
 	font-weight: 400;
 	font-style: normal;
 	letter-spacing: 0.5rem;
-	color: hsl(0, 0%, 50%);
+	color: hsl(0, 0%, 20%);
 	position: relative;
 	white-space: nowrap;
 	transition: all 0.3s ease-out;
@@ -103,7 +104,7 @@ a:hover {
 }
 
 .logo:hover {
-	color: hsl(0, 0%, 25%);
+	color: hsl(0, 0%, 0%);
 }
 
 .logo:hover::before {
@@ -124,14 +125,13 @@ a:hover {
 	font-family: futura-pt, sans-serif;
 	font-weight: 400;
 	font-style: normal;
-	color: hsla(0, 0%, 50%, 0.5);
+	color: hsl(0, 0%, 20%);
 	transition: all 0.3s ease-out;
 	white-space: nowrap;
 }
 
 .link:hover {
 	color: hsl(27, 79%, 59%);
-	opacity: 1;
 }
 
 .secondary-nav {
@@ -146,13 +146,80 @@ a:hover {
 	border-bottom-right-radius: 100vh;
 	box-shadow: 0 1px 3px hsla(0, 0%, 6%, 0.1);
 }
+
+.secondary-nav > * {
+	color: hsl(0, 0%, 96%);
+}
+
 #root {
 	width: 100%;
-	padding-top: 12vh;
-	padding-left: 4rem;
-	padding-right: 4rem;
+	padding-top: 10vh;
 	font-family: futura-pt, sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	font-size: 2rem;
+	position: relative;
+}
+
+.banner {
+	height: 50vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	filter: brightness(0.7);
+}
+
+.banner-text {
+	position: absolute;
+	color: hsl(27, 79%, 59%);
+	font-size: 8rem;
+	letter-spacing: 1rem;
+	font-family: reross-quadratic, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.banner-text::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 35%;
+	height: 6px;
+	background-color: hsl(0, 0%, 96%);
+	transition: all 0.3s ease-out;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+}
+
+.card__header {
+	font-size: 2rem;
+}
+
+.card__body {
+	display: flex;
+	flex-direction: column;
+}
+
+.card__title {
+	font-size: 3rem;
+}
+
+.card__text {
+	font-size: 2rem;
+}
+
+#createStatus {
 	font-size: 2rem;
 }

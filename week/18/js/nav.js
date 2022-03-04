@@ -5,9 +5,6 @@ function Nav() {
 				Bad Bank
 			</Link>
 			<div className="link-container">
-				<Link className="link" to="/">
-					Home
-				</Link>
 				<Link className="link" to="/alldata/">
 					Account
 				</Link>

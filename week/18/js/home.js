@@ -1,9 +1,7 @@
 function Home() {
-	const ctx = React.useContext(UserContext);
 	return (
-		<div>
-			<h1>Home Component</h1>
-			{ctx.users[0].name}
-		</div>
+		<React.Fragment>
+			<Banner image="/images/banner.jpg" text="Welcome to Bad Bank" />
+		</React.Fragment>
 	);
 }
