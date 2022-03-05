@@ -6,6 +6,28 @@ function CreateAccount() {
 	const [password, setPassword] = React.useState("");
 	const ctx = React.useContext(UserContext);
 
+	function validate(field, label) {
+		if (!field) {
+			setStatus("error:" + label);
+			setTimeout(() => setStatus(""), 5000);
+		}
+		return true;
+	}
+
+	function handleCreate() {
+		console.log(name, email, password);
+		if (!validate(name, "name")) return;
+		if (!validate(email, "email")) return;
+		if (!validate(password, "password")) return;
+		ctx.users.push({ name, email, password, balance: 0 });
+		setShow(false);
+	}
+	function clearForm() {
+		setName("");
+		setEmail("");
+		setPassword("");
+		setShow(true);
+	}
 	return (
 		<Card
 			header="Create Account"
@@ -26,7 +48,7 @@ function CreateAccount() {
 										onChange={(e) => setName(e.currentTarget.value)}
 										required
 									/>
-									<label for="name" className="form_label">
+									<label htmlFor="name" className="form_label">
 										Name
 									</label>
 									<div className="form_input-validator"></div>
@@ -47,11 +69,11 @@ function CreateAccount() {
 										className="form_input form_input-email"
 										placeholder="Email Address"
 										required
-										autocomplete="email"
+										autoComplete="email"
 										value={email}
 										onChange={(e) => setEmail(e.currentTarget.value)}
 									/>
-									<label for="email" className="form_label">
+									<label htmlFor="email" className="form_label">
 										Email Address
 									</label>
 									<div className="form_input-validator"></div>
@@ -75,7 +97,7 @@ function CreateAccount() {
 										onChange={(e) => setPassword(e.currentTarget.value)}
 										required
 									/>
-									<label for="password" className="form_label">
+									<label htmlFor="password" className="form_label">
 										Password
 									</label>
 									<div className="form_input-validator"></div>
@@ -88,14 +110,19 @@ function CreateAccount() {
 										<path d="M9 21.035l-9-8.638 2.791-2.87 6.156 5.874 12.21-12.436 2.843 2.817z" />
 									</svg>
 								</div>
-								<button className="submit" type="submit">
-									submit
+								<button onClick={handleCreate} className="submit" type="submit">
+									Create Account
 								</button>
 							</form>
 						</div>
 					</React.Fragment>
 				) : (
-					<React.Fragment></React.Fragment>
+					<React.Fragment>
+						<h5>Success</h5>
+						<button onClick={clearForm} className="submit" type="submit">
+							Add Another Account
+						</button>
+					</React.Fragment>
 				)
 			}
 		/>
