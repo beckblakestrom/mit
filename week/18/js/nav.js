@@ -6,7 +6,7 @@ function Nav() {
 			</Link>
 			<div className="link-container">
 				<Link className="link" to="/alldata/">
-					Account
+					Data
 				</Link>
 				<Link className="link" to="/balance/">
 					Balance

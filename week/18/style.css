@@ -201,7 +201,7 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	background-color: hsl(0, 0%, 90%);
-	padding: 2rem;
+	height: 90vh;
 }
 
 .card__header {
@@ -233,7 +233,6 @@ a:hover {
 .form {
 	width: 40%;
 	margin: auto;
-	border: solid hsl(0, 0%, 20%) 2px;
 	background-color: hsl(0, 0%, 96%);
 	border-radius: 3px;
 	padding: 4rem;
@@ -342,4 +341,44 @@ a:hover {
 .submit:hover {
 	filter: brightness(1.2);
 	cursor: pointer;
+}
+
+.page-container {
+	height: 90vh;
+	background-color: hsl(0, 0%, 90%);
+}
+
+.account-container {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"welcome welcome welcome"
+		"balance transaction deposit"
+		". transaction withdraw";
+}
+
+.account-welcome {
+	grid-area: welcome;
+	font-size: 4rem;
+	align-self: center;
+	justify-self: center;
+}
+
+.account-balance {
+	grid-area: balance;
+}
+
+.account-transaction-container {
+	grid-area: transaction;
+}
+
+.account-deposit {
+	grid-area: deposit;
+}
+
+.account-withdraw {
+	grid-area: withdraw;
 }
