@@ -6,7 +6,8 @@ function Spa() {
 				value={{
 					users: [
 						{
-							name: "Blake",
+							firstName: "Blake",
+							lastName: "Beckstrom",
 							email: "email@gmail.com",
 							password: "secret",
 							balance: 120000,

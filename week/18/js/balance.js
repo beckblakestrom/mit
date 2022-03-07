@@ -5,7 +5,7 @@ function Balance() {
 			<div className="page-container">
 				<div className="account-container">
 					<h1 className="account-welcome">
-						Hi, {ctx.users[0].name}. Here are your account details.
+						Hi, {ctx.users[0].firstName}. Here are your account details.
 					</h1>
 					<h1 className="account-balance">
 						Current Balance: ${ctx.users[0].balance}

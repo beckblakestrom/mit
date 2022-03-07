@@ -1,7 +1,8 @@
 function CreateAccount() {
 	const [show, setShow] = React.useState(true);
 	const [status, setStatus] = React.useState("");
-	const [name, setName] = React.useState("");
+	const [firstName, setFirstName] = React.useState("");
+	const [lastName, setLastName] = React.useState("");
 	const [email, setEmail] = React.useState("");
 	const [password, setPassword] = React.useState("");
 	const ctx = React.useContext(UserContext);
@@ -23,7 +24,8 @@ function CreateAccount() {
 		setShow(false);
 	}
 	function clearForm() {
-		setName("");
+		setFirstName("");
+		setLastName("");
 		setEmail("");
 		setPassword("");
 		setShow(true);
@@ -40,16 +42,40 @@ function CreateAccount() {
 								<div className="form_section">
 									<input
 										type="text"
-										name="name"
-										id="name"
+										name="firstName"
+										id="firstName"
 										className="form_input"
-										placeholder="Name"
-										value={name}
-										onChange={(e) => setName(e.currentTarget.value)}
+										placeholder="First Name"
+										value={firstName}
+										onChange={(e) => setFirstName(e.currentTarget.value)}
 										required
 									/>
 									<label htmlFor="name" className="form_label">
-										Name
+										First Name
+									</label>
+									<div className="form_input-validator"></div>
+									<svg
+										className="form_check"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24">
+										<path d="M9 21.035l-9-8.638 2.791-2.87 6.156 5.874 12.21-12.436 2.843 2.817z" />
+									</svg>
+								</div>
+								<div className="form_section">
+									<input
+										type="text"
+										name="lastname"
+										id="lastname"
+										className="form_input"
+										placeholder="Last Name"
+										value={lastName}
+										onChange={(e) => setLastName(e.currentTarget.value)}
+										required
+									/>
+									<label htmlFor="lastName" className="form_label">
+										Last Name
 									</label>
 									<div className="form_input-validator"></div>
 									<svg
