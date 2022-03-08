@@ -16,11 +16,12 @@ function CreateAccount() {
 	}
 
 	function handleCreate() {
-		console.log(name, email, password);
-		if (!validate(name, "name")) return;
+		console.log(firstName, lastName, email, password);
+		if (!validate(firstName, "firstName")) return;
+		if (!validate(lastName, "lastName")) return;
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
-		ctx.users.push({ name, email, password, balance: 0 });
+		ctx.users.push({ firstName, lastName, email, password, balance: 0 });
 		setShow(false);
 	}
 	function clearForm() {
