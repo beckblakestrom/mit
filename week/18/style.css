@@ -382,3 +382,12 @@ a:hover {
 .account-withdraw {
 	grid-area: withdraw;
 }
+
+.full-page-container {
+	height: 90vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,13 +1,3 @@
-function Deposit() {
-	const ctx = React.useContext(UserContext);
-	return (
-		<div>
-			<h1>Deposit Component</h1>
-			{JSON.stringify(ctx.users)};
-		</div>
-	);
-}
-
 // callback function, takes onclick functions
 const ATMDeposit = ({ onChange, isDeposit }) => {
 	// Choices for warning
@@ -25,13 +15,13 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 				type="number"
 				onChange={onChange}></input>
 			{/* submit button */}
-			<input className="submit" type="submit" value="Submit"></input>
+			<input className="deposit-submit" type="submit" value="Submit"></input>
 		</label>
 	);
 };
 
-// main app
-const Account = () => {
+function Deposit() {
+	const ctx = React.useContext(UserContext);
 	let deposit = 0; // state of this transaction
 	console.log(`initial deposit = ${deposit}`);
 	// total
@@ -67,29 +57,35 @@ const Account = () => {
 
 	// html returned
 	return (
-		<form className="container" onSubmit={handleSubmit}>
-			<i className="bitcoin bi bi-currency-bitcoin"></i>
-			<i className="lock bi bi-file-lock"></i>
+		<div className="full-page-container">
+			<form className="container" onSubmit={handleSubmit}>
+				<i className="bitcoin bi bi-currency-bitcoin"></i>
+				<i className="lock bi bi-file-lock"></i>
 
-			{/* welcome header */}
-			<h1 className="welcome">Welcome to React Bank</h1>
+				{/* welcome header */}
+				<h1 className="welcome">Deposit & Withdraw</h1>
 
-			{/* please select header */}
-			<h2 className="select">Please Select:</h2>
+				{/* please select header */}
+				<h2 className="select">Please Select:</h2>
 
-			{/* buttons to select deposit or withdrawal */}
-			<button className="button button-1" onClick={() => setIsDeposit(true)}>
-				Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
-			</button>
-			<button className="button button-2" onClick={() => setIsDeposit(false)}>
-				Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
-			</button>
+				{/* buttons to select deposit or withdrawal */}
+				<button
+					className="deposit-button button-1"
+					onClick={() => setIsDeposit(true)}>
+					Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
+				</button>
+				<button
+					className="deposit-button button-2"
+					onClick={() => setIsDeposit(false)}>
+					Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
+				</button>
 
-			{/*  */}
-			<ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
+				{/*  */}
+				<ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
 
-			{/* current balace printout */}
-			<h2 id="total">{status}</h2>
-		</form>
+				{/* current balace printout */}
+				<h2 id="total">{status}</h2>
+			</form>
+		</div>
 	);
-};
+}
