@@ -13,11 +13,11 @@ function Balance() {
 					<div className="account-transaction-container">
 						<h1 className="account-transaction-header">Latest Transactions</h1>
 					</div>
-					<Link className="account-button account-deposit" to="/deposit/">
-						Deposit
+					<Link className="account-deposit grid-button" to="/deposit/">
+						Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
 					</Link>
-					<Link className="account-button account-withdraw" to="/withdraw/">
-						Withdraw
+					<Link className="account-withdraw grid-button" to="/withdraw/">
+						Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
 					</Link>
 				</div>
 			</div>
