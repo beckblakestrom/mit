@@ -5,20 +5,40 @@ function Login() {
 	const [lastName, setLastName] = React.useState("");
 	const [email, setEmail] = React.useState("");
 	const [password, setPassword] = React.useState("");
+	const [loggedIn, setLoggedIn] = React.useState(false);
+	const [currentUser, setCurrentUser] = React.useState("");
 	const ctx = React.useContext(UserContext);
 
-	function validate(field, label) {
-		if (!field) {
-			setStatus("error:" + label);
-			setTimeout(() => setStatus(""), 5000);
+	function checkLogin() {
+		event.preventDefault();
+		console.log(email, password);
+		for (let i = 0; i < ctx.users.length; i++) {
+			if (email == ctx.users[i].email && password == ctx.users[i].password) {
+				let thisUser = ctx.users[i];
+				console.log(`match`);
+				console.log(thisUser);
+				setCurrentUser(thisUser);
+				console.log(currentUser);
+				setLoggedIn(true);
+				Success(thisUser);
+			} else {
+				console.log(`not a match`);
+			}
+		}
+	}
+
+	function validate(field) {
+		if (field) {
 		}
 		return true;
 	}
 
+	function Success(thisUser) {
+		console.log(thisUser.firstName);
+	}
+
 	function handleCreate() {
 		console.log(firstName, lastName, email, password);
-		if (!validate(firstName, "firstName")) return;
-		if (!validate(lastName, "lastName")) return;
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
 		ctx.users.push({ firstName, lastName, email, password, balance: 0 });
@@ -31,7 +51,7 @@ function Login() {
 		setPassword("");
 		setShow(true);
 	}
-	return show ? (
+	return !loggedIn ? (
 		<div className="full-page-container">
 			<div className="form_container">
 				<form className="form">
@@ -85,7 +105,7 @@ function Login() {
 							<path d="M9 21.035l-9-8.638 2.791-2.87 6.156 5.874 12.21-12.436 2.843 2.817z" />
 						</svg>
 					</div>
-					<button onClick={handleCreate} className="submit" type="submit">
+					<button onClick={checkLogin} className="submit" type="submit">
 						Login
 					</button>
 					<div className="need-create">
@@ -99,9 +119,9 @@ function Login() {
 		</div>
 	) : (
 		<div className="full-page-container">
-			<h5>Success</h5>
+			<h1>Welcome {currentUser.firstName}</h1>
 			<button onClick={clearForm} className="submit" type="submit">
-				Add Another Account
+				Add Another Account {currentUser.firstName}
 			</button>
 		</div>
 	);

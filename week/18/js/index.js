@@ -8,8 +8,8 @@ function Spa() {
 						{
 							firstName: "Blake",
 							lastName: "Beckstrom",
-							email: "email@gmail.com",
-							password: "secret",
+							email: "blake@gmail.com",
+							password: "hard",
 							balance: 120000,
 						},
 					],
