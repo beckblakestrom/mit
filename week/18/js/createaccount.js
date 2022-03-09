@@ -10,7 +10,8 @@ function CreateAccount() {
 
 	function validate(field, label) {
 		if (!field) {
-			console.log(field, label);
+			console.log(`empty field: ${label}`);
+			console.log(JSON.stringify(field));
 			return false;
 		}
 		return true;
