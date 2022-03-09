@@ -10,8 +10,8 @@ function CreateAccount() {
 
 	function validate(field, label) {
 		if (!field) {
-			setStatus("error:" + label);
-			setTimeout(() => setStatus(""), 5000);
+			console.log(field, label);
+			return false;
 		}
 		return true;
 	}
