@@ -11,6 +11,8 @@ function Login() {
 
 	function checkLogin() {
 		event.preventDefault();
+		if (!validate(email, "email")) return;
+		if (!validate(password, "password")) return;
 		console.log(email, password);
 		for (let i = 0; i < ctx.users.length; i++) {
 			if (email == ctx.users[i].email && password == ctx.users[i].password) {
@@ -23,12 +25,15 @@ function Login() {
 				Success(thisUser);
 			} else {
 				console.log(`not a match`);
+				alert(`User Does Not Exist`);
 			}
 		}
 	}
 
-	function validate(field) {
-		if (field) {
+	function validate(field, label) {
+		if (!field) {
+			setStatus("error:" + label);
+			setTimeout(() => setStatus(""), 5000);
 		}
 		return true;
 	}
@@ -37,13 +42,6 @@ function Login() {
 		console.log(thisUser.firstName);
 	}
 
-	function handleCreate() {
-		console.log(firstName, lastName, email, password);
-		if (!validate(email, "email")) return;
-		if (!validate(password, "password")) return;
-		ctx.users.push({ firstName, lastName, email, password, balance: 0 });
-		setShow(false);
-	}
 	function clearForm() {
 		setFirstName("");
 		setLastName("");
@@ -121,7 +119,7 @@ function Login() {
 		<div className="full-page-container">
 			<h1>Welcome {currentUser.firstName}</h1>
 			<button onClick={clearForm} className="submit" type="submit">
-				Add Another Account {currentUser.firstName}
+				Add Another Account
 			</button>
 		</div>
 	);
