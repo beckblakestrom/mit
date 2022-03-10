@@ -19,9 +19,6 @@ function Nav() {
 				</Link>
 			</div>
 			<div className="secondary-nav">
-				<Link className="link" to="/createaccount/">
-					Create Account
-				</Link>
 				<Link className="link" to="/login/">
 					Login
 				</Link>
