@@ -122,10 +122,21 @@ function Login() {
 		</div>
 	) : (
 		<div className="full-page-container">
-			<h1>Welcome {currentUser.firstName}</h1>
-			<button onClick={clearForm} className="submit" type="submit">
-				Add Another Account
-			</button>
+			<div className="login-success">
+				<h1>Welcome {currentUser.firstName}</h1>
+				<h1>How may we assist you today?</h1>
+				<div className="login-success-links">
+					<Link className="login-success-button" to="/balance/">
+						Balance
+					</Link>
+					<Link className="login-success-button" to="/deposit/">
+						Deposit
+					</Link>
+					<Link className="login-success-button" to="/withdraw/">
+						Withdraw
+					</Link>
+				</div>
+			</div>
 		</div>
 	);
 }
