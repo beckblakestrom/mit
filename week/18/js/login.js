@@ -14,8 +14,9 @@ function Login() {
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
 		console.log(email, password);
+
 		for (let i = 0; i < ctx.users.length; i++) {
-			if (email == ctx.users[i].email && password == ctx.users[i].password) {
+			if (email === ctx.users[i].email && password === ctx.users[i].password) {
 				let thisUser = ctx.users[i];
 				console.log(`match`);
 				console.log(thisUser);
@@ -23,11 +24,15 @@ function Login() {
 				console.log(currentUser);
 				setLoggedIn(true);
 				Success(thisUser);
+				return;
 			} else {
-				console.log(`not a match`);
-				alert(`User Does Not Exist`);
+				continue;
 			}
+
+			// does not match ctx.users[0], so not a match and then it runs again and is a match
 		}
+		console.log(`not a match`);
+		alert(`User Does Not Exist`);
 	}
 
 	function validate(field, label) {

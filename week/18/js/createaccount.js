@@ -10,11 +10,18 @@ function CreateAccount() {
 
 	function validate(field, label) {
 		if (!field) {
-			console.log(`empty field: ${label}`);
-			console.log(JSON.stringify(field));
 			return false;
+		} else {
+			for (let i = 0; i < ctx.users.length; i++) {
+				if (email === ctx.users[i].email) {
+					event.preventDefault();
+					alert(`user already exists`);
+					clearForm();
+				} else {
+					return true;
+				}
+			}
 		}
-		return true;
 	}
 
 	function handleCreate() {
