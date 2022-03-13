@@ -12,8 +12,8 @@ function Spa() {
 	});
 	return (
 		<HashRouter>
-			<Nav />
 			<UserContext.Provider value={{ user, setUser }}>
+				<Nav />
 				<Routes>
 					<Route path="/" exact element={<Home />} />
 					<Route path="/alldata/" element={<AllData />} />
