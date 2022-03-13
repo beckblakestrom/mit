@@ -1,19 +1,19 @@
 function Spa() {
+	const [user, setUser] = React.useState({
+		users: [
+			{
+				firstName: "Blake",
+				lastName: "Beckstrom",
+				email: "blake@gmail.com",
+				password: "hard",
+				balance: 120000,
+			},
+		],
+	});
 	return (
 		<HashRouter>
 			<Nav />
-			<UserContext.Provider
-				value={{
-					users: [
-						{
-							firstName: "Blake",
-							lastName: "Beckstrom",
-							email: "blake@gmail.com",
-							password: "hard",
-							balance: 120000,
-						},
-					],
-				}}>
+			<UserContext.Provider value={{ user, setUser }}>
 				<Routes>
 					<Route path="/" exact element={<Home />} />
 					<Route path="/alldata/" element={<AllData />} />
