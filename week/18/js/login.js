@@ -7,17 +7,20 @@ function Login() {
 	const [password, setPassword] = React.useState("");
 	const [loggedIn, setLoggedIn] = React.useState(false);
 	const [currentUser, setCurrentUser] = React.useState("");
-	const ctx = React.useContext(UserContext);
+	const { user, setUser } = React.useContext(UserContext);
 
-	function checkLogin() {
+	function checkLogin(event) {
 		event.preventDefault();
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
 		console.log(email, password);
 
-		for (let i = 0; i < ctx.users.length; i++) {
-			if (email === ctx.users[i].email && password === ctx.users[i].password) {
-				let thisUser = ctx.users[i];
+		for (let i = 0; i < user.users.length; i++) {
+			if (
+				email === user.users[i].email &&
+				password === user.users[i].password
+			) {
+				let thisUser = user.users[i];
 				console.log(`match`);
 				console.log(thisUser);
 				setCurrentUser(thisUser);
@@ -29,7 +32,7 @@ function Login() {
 				continue;
 			}
 
-			// does not match ctx.users[0], so not a match and then it runs again and is a match
+			// does not match user.users[0], so not a match and then it runs again and is a match
 		}
 		console.log(`not a match`);
 		alert(`User Does Not Exist`);

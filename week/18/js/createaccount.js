@@ -6,14 +6,14 @@ function CreateAccount() {
 	const [email, setEmail] = React.useState("");
 	const [password, setPassword] = React.useState("");
 	const [loggedIn, setLoggedIn] = React.useState(false);
-	const ctx = React.useContext(UserContext);
+	const { user, setUser } = React.useContext(UserContext);
 
 	function validate(field, label) {
 		if (!field) {
 			return false;
 		} else {
-			for (let i = 0; i < ctx.users.length; i++) {
-				if (email === ctx.users[i].email) {
+			for (let i = 0; i < user.users.length; i++) {
+				if (email === user.users[i].email) {
 					event.preventDefault();
 					alert(`user already exists`);
 					clearForm();
@@ -30,7 +30,7 @@ function CreateAccount() {
 		if (!validate(lastName, "lastName")) return;
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
-		ctx.users.push({ firstName, lastName, email, password, balance: 0 });
+		user.users.push({ firstName, lastName, email, password, balance: 0 });
 		setShow(false);
 	}
 	function clearForm() {
