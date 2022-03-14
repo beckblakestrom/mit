@@ -1,0 +1,101 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* changes base font to 10px */
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*  */
+
+.page-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	position: relative;
+	height: 100vh;
+}
+
+.component-container {
+	border: solid black 5px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.products-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.products-img {
+	width: 25%;
+}
+
+.products-item {
+	font-size: 2rem;
+}
+
+.products-inventory {
+	font-size: 2rem;
+}
+
+.products-button {
+	background-color: hsl(0, 0%, 85%);
+	padding: 0.5rem 2rem;
+	font-size: 2rem;
+	border-radius: 100vw;
+	transition: all 0.3s ease-out;
+}
+
+.products-button:hover {
+	cursor: pointer;
+	background-color: hsl(0, 0%, 65%);
+}
