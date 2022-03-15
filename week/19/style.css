@@ -99,3 +99,10 @@ a {
 	cursor: pointer;
 	background-color: hsl(0, 0%, 65%);
 }
+
+.products-out {
+	background-color: hsl(0, 100%, 85%);
+	padding: 0.5rem 2rem;
+	font-size: 2rem;
+	border-radius: 100vw;
+}
