@@ -23,6 +23,7 @@ const Products = () => {
 								let items = [...products.items];
 								let item = { ...items[i] };
 								item.inventory -= 1;
+								item.clicks += 1;
 								items[i] = item;
 								setProducts({ items });
 							}}>
