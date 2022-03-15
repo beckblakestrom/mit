@@ -1,6 +1,7 @@
 const UserContext = React.createContext(null);
 
 function App() {
+	const [cart, setCart] = React.useState(null);
 	const [products, setProducts] = React.useState({
 		items: [
 			{
