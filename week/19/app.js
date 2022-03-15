@@ -8,24 +8,28 @@ function App() {
 				inventory: 5,
 				src: "./img/apple.png",
 				clicks: 0,
+				price: 2,
 			},
 			{
 				item: "Orange",
 				inventory: 5,
 				src: "./img/apple.png",
 				clicks: 0,
+				price: 3,
 			},
 			{
 				item: "Pear",
 				inventory: 5,
 				src: "./img/apple.png",
 				clicks: 0,
+				price: 1,
 			},
 			{
 				item: "Banana",
 				inventory: 5,
 				src: "./img/apple.png",
 				clicks: 0,
+				price: 2,
 			},
 		],
 	});
