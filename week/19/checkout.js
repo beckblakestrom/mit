@@ -11,12 +11,15 @@ const Checkout = () => {
 		products.items.map((current) => {
 			let currentTotal = current.price * current.clicks;
 			runningTotal += currentTotal;
+			console.log(runningTotal);
 		});
-		return (
+		return tab ? (
 			<div>
 				<h1>Total</h1>
 				<h1 className="checkout-total">${runningTotal}</h1>
 			</div>
+		) : (
+			<h1>hello</h1>
 		);
 	}
 
