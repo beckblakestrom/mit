@@ -108,3 +108,12 @@ a {
 	font-size: 2rem;
 	border-radius: 100vw;
 }
+
+.products-span {
+	display: flex;
+	gap: 1rem;
+}
+
+.checkout-total {
+	font-size: 3rem;
+}
