@@ -19,6 +19,10 @@
 html {
 	font-size: 10px;
 	scroll-behavior: smooth;
+
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 600;
+	font-style: normal;
 }
 
 /*
@@ -65,9 +69,15 @@ a {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	position: relative;
 	background-color: hsla(0, 0%, 85%, 0.5);
 	border-radius: 25px;
+}
+
+.component-header {
+	font-size: 4rem;
+	padding: 2rem;
 }
 
 .products-container {
@@ -81,7 +91,16 @@ a {
 	width: 25%;
 }
 
+.products-column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
 .products-item {
+	font-size: 2rem;
+}
+
+.products-price {
 	font-size: 2rem;
 }
 
@@ -102,6 +121,14 @@ a {
 	background-color: hsl(150, 50%, 70%);
 }
 
+.products-button-remove:hover {
+	background-color: hsl(0, 50%, 70%);
+}
+
+.products-button-checkout:hover {
+	background-color: hsl(222, 50%, 70%);
+}
+
 .products-out {
 	background-color: hsl(0, 100%, 85%);
 	padding: 0.5rem 2rem;
@@ -116,4 +143,7 @@ a {
 
 .checkout-total {
 	font-size: 3rem;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 }
