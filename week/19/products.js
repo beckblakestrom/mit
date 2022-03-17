@@ -43,7 +43,7 @@ const Products = () => {
 	}
 
 	return (
-		<div className="component-container">
+		<div className="component-container products">
 			<h1 className="component-header">Store</h1>
 			<Listing />
 		</div>

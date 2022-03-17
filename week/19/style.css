@@ -59,6 +59,10 @@ a {
 .page-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas:
+		"products products checkout"
+		"cart cart checkout";
 	gap: 2rem;
 	padding: 2rem;
 	position: relative;
@@ -67,17 +71,21 @@ a {
 
 .component-container {
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 	position: relative;
 	background-color: hsla(0, 0%, 85%, 0.5);
 	border-radius: 25px;
+	padding: 2rem;
 }
 
 .component-header {
 	font-size: 4rem;
-	padding: 2rem;
+	padding: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .products-container {
@@ -145,5 +153,21 @@ a {
 	font-size: 3rem;
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 2rem;
+}
+
+.products {
+	grid-area: products;
+}
+
+.cart {
+	grid-area: cart;
+}
+
+.checkout {
+	padding-top: 15%;
+	grid-area: checkout;
+	display: flex;
+	flex-direction: column;
 }

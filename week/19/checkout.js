@@ -63,7 +63,7 @@ const Checkout = () => {
 	}
 
 	return (
-		<div className="component-container">
+		<div className="component-container checkout">
 			<h1 className="component-header">Checkout</h1>
 			<Basket />
 			<Total />
