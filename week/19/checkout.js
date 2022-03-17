@@ -8,7 +8,6 @@ const Checkout = () => {
 		products.items.map((current) => {
 			let currentTotal = current.price * current.clicks;
 			runningTotal += currentTotal;
-			console.log(runningTotal);
 
 			let basket = current.clicks;
 			if (basket > 0) {
@@ -17,12 +16,15 @@ const Checkout = () => {
 		});
 
 		return tab ? (
-			<div>
-				<h1>Total</h1>
-				<h1 className="checkout-total">${runningTotal}</h1>
+			<div className="checkout-total">
+				<h1>Checkout Total:</h1>
+				<h1>${runningTotal}</h1>
+				<button className="products-button products-button-checkout">
+					Checkout
+				</button>
 			</div>
 		) : (
-			<h1>hello</h1>
+			<h1 className="checkout-total">Basket Empty</h1>
 		);
 	}
 
@@ -62,6 +64,7 @@ const Checkout = () => {
 
 	return (
 		<div className="component-container">
+			<h1 className="component-header">Checkout</h1>
 			<Basket />
 			<Total />
 		</div>
