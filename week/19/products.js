@@ -14,8 +14,13 @@ const Products = () => {
 			return (
 				<div key={current.item} className="products-container">
 					<img className="products-img" src={src} />
-					<h1 className="products-item">{current.item}</h1>
-					<h1 className="products-inventory">Inventory: {current.inventory}</h1>
+					<div className="products-column">
+						<h1 className="products-item">{current.item}</h1>
+						<h1 className="products-price">Price: ${current.price}</h1>
+						<h1 className="products-inventory">
+							Inventory: {current.inventory}
+						</h1>
+					</div>
 					{!out ? (
 						<button
 							className="products-button"
@@ -27,7 +32,7 @@ const Products = () => {
 								items[i] = item;
 								setProducts({ items });
 							}}>
-							Add to Cart
+							Add to Basket
 						</button>
 					) : (
 						<h1 className="products-out">Out of Stock</h1>
@@ -39,6 +44,7 @@ const Products = () => {
 
 	return (
 		<div className="component-container">
+			<h1 className="component-header">Store</h1>
 			<Listing />
 		</div>
 	);
