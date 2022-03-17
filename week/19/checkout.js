@@ -4,15 +4,18 @@ const Checkout = () => {
 	function Total() {
 		let runningTotal = 0;
 		let tab = false;
-		if (runningTotal > 0) {
-			tab = true;
-		}
 
 		products.items.map((current) => {
 			let currentTotal = current.price * current.clicks;
 			runningTotal += currentTotal;
 			console.log(runningTotal);
+
+			let basket = current.clicks;
+			if (basket > 0) {
+				tab = true;
+			}
 		});
+
 		return tab ? (
 			<div>
 				<h1>Total</h1>
