@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restuarants",
+  "info": {
+    "singularName": "restuarant",
+    "pluralName": "restuarants",
+    "displayName": "restuarant"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "restuarant"
+    }
+  }
+}
