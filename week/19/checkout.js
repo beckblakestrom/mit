@@ -3,11 +3,13 @@ const Checkout = () => {
 
 	function Total() {
 		let runningTotal = 0;
+		let newRunningTotal = 0;
 		let tab = false;
 
 		products.items.map((current) => {
 			let currentTotal = current.price * current.clicks;
 			runningTotal += currentTotal;
+			newRunningTotal = runningTotal.toFixed(2);
 
 			let basket = current.clicks;
 			if (basket > 0) {
@@ -18,7 +20,7 @@ const Checkout = () => {
 		return tab ? (
 			<div className="checkout-total">
 				<h1>Checkout Total:</h1>
-				<h1>${runningTotal}</h1>
+				<h1>${newRunningTotal}</h1>
 				<button className="products-button products-button-checkout">
 					Checkout
 				</button>
@@ -53,7 +55,7 @@ const Checkout = () => {
 					</div>
 
 					<h1 className="products-inventory">
-						Total: ${current.price * current.clicks}
+						Total: ${(current.price * current.clicks).toFixed(2)}
 					</h1>
 				</div>
 			) : (

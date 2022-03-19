@@ -16,7 +16,9 @@ const Products = () => {
 					<img className="products-img" src={src} />
 					<div className="products-column">
 						<h1 className="products-item">{current.item}</h1>
-						<h1 className="products-price">Price: ${current.price}</h1>
+						<h1 className="products-price">
+							Price: ${current.price.toFixed(2)}
+						</h1>
 						<h1 className="products-inventory">
 							Inventory: {current.inventory}
 						</h1>
