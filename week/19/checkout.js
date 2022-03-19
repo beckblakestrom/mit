@@ -21,7 +21,43 @@ const Checkout = () => {
 			<div className="checkout-total">
 				<h1>Checkout Total:</h1>
 				<h1>${newRunningTotal}</h1>
-				<button className="products-button products-button-checkout">
+				<button
+					className="products-button products-button-checkout"
+					onClick={() => {
+						console.log("clicked");
+						setProducts({
+							items: [
+								{
+									item: "Apple",
+									inventory: 5,
+
+									clicks: 0,
+									price: 2,
+								},
+								{
+									item: "Orange",
+									inventory: 5,
+
+									clicks: 0,
+									price: 3,
+								},
+								{
+									item: "Pear",
+									inventory: 5,
+
+									clicks: 0,
+									price: 1.5,
+								},
+								{
+									item: "Banana",
+									inventory: 5,
+
+									clicks: 0,
+									price: 2,
+								},
+							],
+						});
+					}}>
 					Checkout
 				</button>
 			</div>

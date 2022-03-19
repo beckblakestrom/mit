@@ -62,7 +62,7 @@ a {
 	grid-template-rows: repeat(2, 1fr);
 	grid-template-areas:
 		"products products checkout"
-		"cart cart checkout";
+		"cart cart restock";
 	gap: 2rem;
 	padding: 2rem;
 	position: relative;
@@ -81,11 +81,12 @@ a {
 }
 
 .component-header {
-	font-size: 4rem;
-	padding: 1rem;
+	font-size: 3rem;
+	color: orangered;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .products-container {
@@ -96,7 +97,7 @@ a {
 }
 
 .products-img {
-	width: 20%;
+	width: 15%;
 }
 
 .products-column {
@@ -166,8 +167,23 @@ a {
 }
 
 .checkout {
-	padding-top: 15%;
 	grid-area: checkout;
 	display: flex;
 	flex-direction: column;
+}
+
+.restock {
+	grid-area: restock;
+}
+
+.restock-button {
+	background-color: hsl(0, 0%, 100%);
+	text-align: center;
+	font-size: 2rem;
+	border-radius: 100vw;
+	transition: all 0.3s ease-out;
+}
+
+.restock-button:hover {
+	cursor: pointer;
 }

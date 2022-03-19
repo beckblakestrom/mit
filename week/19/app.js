@@ -39,6 +39,7 @@ function App() {
 				<Products />
 				<Cart />
 				<Checkout />
+				<Restock />
 			</div>
 		</UserContext.Provider>
 	);
