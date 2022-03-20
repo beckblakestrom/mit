@@ -11,28 +11,28 @@ function Shopping() {
 	const [products, setProducts] = React.useState({
 		items: [
 			{
-				item: "Apple",
+				item: "apple",
 				inventory: 5,
 
 				clicks: 0,
 				price: 2,
 			},
 			{
-				item: "Orange",
+				item: "orange",
 				inventory: 5,
 
 				clicks: 0,
 				price: 3,
 			},
 			{
-				item: "Pear",
+				item: "pear",
 				inventory: 5,
 
 				clicks: 0,
 				price: 1.5,
 			},
 			{
-				item: "Banana",
+				item: "banana",
 				inventory: 5,
 
 				clicks: 0,

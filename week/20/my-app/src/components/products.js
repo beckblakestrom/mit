@@ -1,5 +1,9 @@
 import React from "react";
 import { UserContext } from "./shopping";
+import apple from "./img/apple.png";
+import banana from "./img/banana.png";
+import pear from "./img/pear.png";
+import orange from "./img/orange.png";
 
 const Products = () => {
 	const { products, setProducts } = React.useContext(UserContext);
@@ -7,8 +11,20 @@ const Products = () => {
 	function Listing() {
 		return products.items.map((current) => {
 			let i = products.items.indexOf(current);
-			let src = "./img/" + current.item + ".png";
-			console.log(src);
+			let src;
+			if (current.item === "apple") {
+				src = apple;
+			}
+			if (current.item === "pear") {
+				src = pear;
+			}
+			if (current.item === "banana") {
+				src = banana;
+			}
+			if (current.item === "orange") {
+				src = orange;
+			}
+
 			let stock = current.inventory;
 			let out = false;
 			if (stock === 0) {
@@ -17,11 +33,7 @@ const Products = () => {
 
 			return (
 				<div key={current.item} className="products-container">
-					<img
-						className="products-img"
-						src={require("./img/apple.png")}
-						alt={current.item}
-					/>
+					<img className="products-img" src={src} alt={current.item} />
 					<div className="products-column">
 						<h1 className="products-item">{current.item}</h1>
 						<h1 className="products-price">

@@ -1,12 +1,28 @@
 import React from "react";
 import { UserContext } from "./shopping";
+import apple from "./img/apple.png";
+import banana from "./img/banana.png";
+import pear from "./img/pear.png";
+import orange from "./img/orange.png";
 
 const Cart = () => {
 	const { products, setProducts } = React.useContext(UserContext);
 	function Basket() {
 		return products.items.map((current) => {
 			let i = products.items.indexOf(current);
-			let src = "./img/" + current.item + ".png";
+			let src;
+			if (current.item === "apple") {
+				src = apple;
+			}
+			if (current.item === "pear") {
+				src = pear;
+			}
+			if (current.item === "banana") {
+				src = banana;
+			}
+			if (current.item === "orange") {
+				src = orange;
+			}
 			let basket = current.clicks;
 			let empty = false;
 			if (basket > 0) {
