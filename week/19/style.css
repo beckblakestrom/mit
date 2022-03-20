@@ -156,6 +156,9 @@ a {
 	align-items: center;
 	justify-content: flex-end;
 	gap: 2rem;
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
 }
 
 .products {
