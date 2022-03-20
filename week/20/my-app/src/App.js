@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Products from "./components/products";
+import Shopping from "./components/shopping";
 function App() {
-	return <Products />;
+	return <Shopping />;
 }
 
 export default App;
