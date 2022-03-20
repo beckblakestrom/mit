@@ -17,7 +17,11 @@ const Products = () => {
 
 			return (
 				<div key={current.item} className="products-container">
-					<img className="products-img" src={src} alt={current.item} />
+					<img
+						className="products-img"
+						src={require("./img/apple.png")}
+						alt={current.item}
+					/>
 					<div className="products-column">
 						<h1 className="products-item">{current.item}</h1>
 						<h1 className="products-price">
