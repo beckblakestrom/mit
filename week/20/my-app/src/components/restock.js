@@ -48,14 +48,12 @@ const Restock = () => {
 
 			return (
 				<div key={current.item} className="products-container">
-					<img className="products-img" src={src} />
-					<div className="products-column">
+					<div className="products-column products-column-left">
 						<h1 className="products-item">{current.item}</h1>
 						<h1 className="products-inventory">
 							Inventory: {current.inventory}
 						</h1>
 					</div>
-
 					<button
 						className="products-button"
 						onClick={() => {
