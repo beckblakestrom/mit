@@ -22,7 +22,7 @@ function TodoForm({ addTask }) {
 			/>
 			<button className="button" type="submit">
 				Add Task
-				<i class="add bi bi-journal-plus"></i>
+				<i className="add bi bi-journal-plus"></i>
 			</button>
 		</form>
 	);
@@ -36,7 +36,7 @@ function Todo({ task, index, remove }) {
 	return (
 		<div className="task">
 			{task.text}
-			<i onClick={handle} class="bi bi-check2-square complete"></i>
+			<i onClick={handle} className="bi bi-check2-square complete"></i>
 		</div>
 	);
 }
@@ -81,7 +81,7 @@ function App() {
 				</header>
 				<main className="main">
 					<div onClick={removeAll} className="all">
-						<i class="bi bi-check2-all clear"></i>
+						<i className="bi bi-check2-all clear"></i>
 						Clear All
 					</div>
 					{tasks.map((task, i) => (
