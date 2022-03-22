@@ -1,14 +1,17 @@
 import "./App.css";
 import React from "react";
+import { api } from "./api";
 
 function TodoForm({ addTask }) {
 	const [value, setValue] = React.useState("");
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!value) return;
-		addTask(value);
-		setValue("");
+		api.createItem(value).then((persistedItem) => {
+			if (!value) return;
+			addTask(value);
+			setValue("");
+		});
 	};
 
 	return (
