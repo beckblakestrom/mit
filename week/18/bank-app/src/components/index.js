@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-import { UserContext, Route, Routes, HashRouter } from "./context";
+import { UserContext, Route, Routes, HashRouter, Link } from "./context";
 import Nav from "./nav";
 import Home from "./home";
 import AllData from "./alldata";
@@ -11,7 +11,7 @@ import Deposit from "./deposit";
 import Login from "./login";
 import Withdraw from "./withdraw";
 
-function Spa() {
+export default function Spa() {
 	const [user, setUser] = useState({
 		users: [
 			{
@@ -40,5 +40,3 @@ function Spa() {
 		</HashRouter>
 	);
 }
-
-ReactDOM.render(<Spa />, document.getElementById("root"));

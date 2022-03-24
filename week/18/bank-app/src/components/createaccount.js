@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { UserContext } from "./context";
+import { UserContext, Link } from "./context";
 
 export default function CreateAccount() {
 	const [show, setShow] = useState(true);
@@ -12,7 +12,7 @@ export default function CreateAccount() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const { user, setUser } = useContext(UserContext);
 
-	function validate(field, label) {
+	function validate(field, label, event) {
 		if (!field) {
 			return false;
 		} else {

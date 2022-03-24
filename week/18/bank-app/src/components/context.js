@@ -1,13 +1,11 @@
 import React from "react";
 
-import ReactRouterDOM from "react";
+import { HashRouter, Route, Routes, Link } from "react-router-dom";
 import { createContext } from "react";
 
 export const UserContext = createContext(null);
-export const Route = ReactRouterDOM.Route;
-export const Routes = ReactRouterDOM.Routes;
-export const Link = ReactRouterDOM.Link;
-export const HashRouter = ReactRouterDOM.HashRouter;
+
+export { Route, Routes, Link, HashRouter };
 
 export function Banner(props) {
 	return (

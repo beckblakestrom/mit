@@ -1,9 +1,10 @@
 import React from "react";
 import { useContext } from "react";
 import { UserContext } from "./context";
-import { Link } from "./context";
 
-function Balance() {
+import { Link } from "react-router-dom";
+
+export default function Balance() {
 	const { user, setUser } = useContext(UserContext);
 	return (
 		<div>

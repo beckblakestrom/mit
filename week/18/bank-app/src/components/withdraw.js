@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "./context";
 
 // callback function, takes onclick functions
@@ -24,15 +24,15 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 	);
 };
 
-function Withdraw() {
-	const ctx = React.useContext(UserContext);
+export default function Withdraw() {
+	const ctx = useContext(UserContext);
 	let deposit = 0; // state of this transaction
 	console.log(`initial deposit = ${deposit}`);
 	// total
-	const [totalState, setTotalState] = React.useState(0);
+	const [totalState, setTotalState] = useState(0);
 
 	// deposit or withdrawal
-	const [isDeposit, setIsDeposit] = React.useState(true);
+	const [isDeposit, setIsDeposit] = useState(true);
 
 	// current balance printout
 	let status = `Current Balance: $${totalState} `;
@@ -45,11 +45,10 @@ function Withdraw() {
 	};
 
 	// handles submit button
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (isDeposit == false && deposit > totalState) {
 			alert("insufficient funds");
-			newTotal = totalState;
 		} else {
 			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
 			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;

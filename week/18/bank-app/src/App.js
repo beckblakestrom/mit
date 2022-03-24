@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Spa from "./components";
 
 function App() {
-	return <div className="App"></div>;
+	return <Spa />;
 }
 
 export default App;

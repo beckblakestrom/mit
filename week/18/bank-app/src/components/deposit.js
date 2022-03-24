@@ -45,11 +45,10 @@ export default function Deposit() {
 	};
 
 	// handles submit button
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (isDeposit == false && deposit > totalState) {
 			alert("insufficient funds");
-			newTotal = totalState;
 		} else {
 			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
 			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
