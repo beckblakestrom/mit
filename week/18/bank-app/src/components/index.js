@@ -1,5 +1,18 @@
+import React from "react";
+import { useState } from "react";
+
+import { UserContext, Route, Routes, HashRouter } from "./context";
+import Nav from "./nav";
+import Home from "./home";
+import AllData from "./alldata";
+import Balance from "./balance";
+import CreateAccount from "./createaccount";
+import Deposit from "./deposit";
+import Login from "./login";
+import Withdraw from "./withdraw";
+
 function Spa() {
-	const [user, setUser] = React.useState({
+	const [user, setUser] = useState({
 		users: [
 			{
 				firstName: "Blake",

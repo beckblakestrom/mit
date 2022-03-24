@@ -1,3 +1,7 @@
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "./context";
+
 // callback function, takes onclick functions
 const ATMDeposit = ({ onChange, isDeposit }) => {
 	// Choices for warning

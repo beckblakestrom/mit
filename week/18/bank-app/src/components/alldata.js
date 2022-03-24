@@ -1,5 +1,9 @@
-function AllData() {
-	const { user, setUser } = React.useContext(UserContext);
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "./context";
+
+export default function AllData() {
+	const { user, setUser } = useContext(UserContext);
 	return (
 		<div>
 			<h1>First Name User 0</h1>

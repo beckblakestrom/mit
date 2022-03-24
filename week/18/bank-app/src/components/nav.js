@@ -1,4 +1,6 @@
-function Nav() {
+import { Link } from "./context";
+
+export default function Nav() {
 	return (
 		<div className="nav">
 			<Link to="/" className="logo">

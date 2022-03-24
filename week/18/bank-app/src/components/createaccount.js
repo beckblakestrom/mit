@@ -1,12 +1,16 @@
-function CreateAccount() {
-	const [show, setShow] = React.useState(true);
-	const [status, setStatus] = React.useState("");
-	const [firstName, setFirstName] = React.useState("");
-	const [lastName, setLastName] = React.useState("");
-	const [email, setEmail] = React.useState("");
-	const [password, setPassword] = React.useState("");
-	const [loggedIn, setLoggedIn] = React.useState(false);
-	const { user, setUser } = React.useContext(UserContext);
+import React from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "./context";
+
+export default function CreateAccount() {
+	const [show, setShow] = useState(true);
+	const [status, setStatus] = useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [loggedIn, setLoggedIn] = useState(false);
+	const { user, setUser } = useContext(UserContext);
 
 	function validate(field, label) {
 		if (!field) {

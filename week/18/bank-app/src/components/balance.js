@@ -1,5 +1,10 @@
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "./context";
+import { Link } from "./context";
+
 function Balance() {
-	const { user, setUser } = React.useContext(UserContext);
+	const { user, setUser } = useContext(UserContext);
 	return (
 		<div>
 			<div className="page-container">

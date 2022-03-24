@@ -1,13 +1,17 @@
-function Login() {
-	const [show, setShow] = React.useState(true);
-	const [status, setStatus] = React.useState("");
-	const [firstName, setFirstName] = React.useState("");
-	const [lastName, setLastName] = React.useState("");
-	const [email, setEmail] = React.useState("");
-	const [password, setPassword] = React.useState("");
-	const [loggedIn, setLoggedIn] = React.useState(false);
-	const [currentUser, setCurrentUser] = React.useState("");
-	const { user, setUser } = React.useContext(UserContext);
+import React from "react";
+import { useState, useContext } from "react";
+import { UserContext, Link } from "./context";
+
+export default function Login() {
+	const [show, setShow] = useState(true);
+	const [status, setStatus] = useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [loggedIn, setLoggedIn] = useState(false);
+	const [currentUser, setCurrentUser] = useState("");
+	const { user, setUser } = useContext(UserContext);
 
 	function checkLogin(event) {
 		event.preventDefault();

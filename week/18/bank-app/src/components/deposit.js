@@ -1,3 +1,7 @@
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "./context";
+
 // callback function, takes onclick functions
 const ATMDeposit = ({ onChange, isDeposit }) => {
 	// Choices for warning
@@ -20,8 +24,8 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 	);
 };
 
-function Deposit() {
-	const ctx = React.useContext(UserContext);
+export default function Deposit() {
+	const ctx = useContext(UserContext);
 	let deposit = 0; // state of this transaction
 	console.log(`initial deposit = ${deposit}`);
 	// total
