@@ -9,8 +9,7 @@ export default function CreateAccount() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [loggedIn, setLoggedIn] = useState(false);
-	const { user, setUser } = useContext(UserContext);
+	const { user, setUser, loggedIn, setLoggedIn } = useContext(UserContext);
 
 	function validate(field, label, event) {
 		if (!field) {
@@ -36,6 +35,7 @@ export default function CreateAccount() {
 		if (!validate(password, "password")) return;
 		user.users.push({ firstName, lastName, email, password, balance: 0 });
 		setShow(false);
+		setLoggedIn(true);
 	}
 	function clearForm() {
 		setFirstName("");
@@ -160,7 +160,8 @@ export default function CreateAccount() {
 		</div>
 	) : (
 		<div className="full-page-container">
-			<h5>Success</h5>
+			<h5>Welcome {firstName}</h5>
+			<h5>Thanks for choosing Barclays</h5>
 			<button onClick={clearForm} className="submit" type="submit">
 				Add Another Account
 			</button>
