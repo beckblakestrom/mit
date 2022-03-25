@@ -4,14 +4,14 @@
 	left: 0;
 	width: 100%;
 	height: 10vh;
-	background-color: hsla(0, 0%, 96%, 0.95);
+	background-color: hsl(0, 0%, 96%);
 	box-shadow: 0 1px 1px hsla(0, 0%, 6%, 0.1);
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2rem 4rem;
-	z-index: +1;
+	z-index: +2;
 }
 
 .logo {
@@ -79,23 +79,15 @@
 
 .secondary-nav {
 	position: absolute;
-	top: 100%;
+	z-index: +1;
+	width: 50%;
+	top: -30vh;
 	right: 5%;
-	background-color: hsl(0, 0%, 20%);
+	background-color: hsl(0, 0%, 96%);
 	display: flex;
 	gap: 4rem;
 
 	border-bottom-left-radius: 25px;
-	border-bottom-right-radius: 25px;
-	box-shadow: 0 1px 3px hsla(0, 0%, 6%, 0.1);
+
 	transition: all 0.3s ease-out;
-}
-
-.secondary-nav > * {
-	color: hsl(0, 0%, 96%);
-	padding: 1rem 4rem;
-}
-
-.secondary-nav:hover {
-	cursor: pointer;
 }
