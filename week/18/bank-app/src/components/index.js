@@ -12,6 +12,7 @@ import Login from "./login";
 import Withdraw from "./withdraw";
 
 export default function Spa() {
+	const [loggedIn, setLoggedIn] = useState(false);
 	const [user, setUser] = useState({
 		users: [
 			{
@@ -25,7 +26,7 @@ export default function Spa() {
 	});
 	return (
 		<HashRouter>
-			<UserContext.Provider value={{ user, setUser }}>
+			<UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
 				<Nav />
 				<Routes>
 					<Route path="/" exact element={<Home />} />

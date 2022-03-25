@@ -9,9 +9,8 @@ export default function Login() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [loggedIn, setLoggedIn] = useState(false);
 	const [currentUser, setCurrentUser] = useState("");
-	const { user, setUser } = useContext(UserContext);
+	const { user, setUser, loggedIn, setLoggedIn } = useContext(UserContext);
 
 	function checkLogin(event) {
 		event.preventDefault();
@@ -52,6 +51,10 @@ export default function Login() {
 
 	function Success(thisUser) {
 		console.log(thisUser.firstName);
+
+		setTimeout(() => {
+			document.getElementById("login-dropdown").classList.toggle("drop");
+		}, 4000);
 	}
 
 	function clearForm() {
@@ -62,7 +65,7 @@ export default function Login() {
 		setShow(true);
 	}
 	return !loggedIn ? (
-		<div className="full-page-container">
+		<div className="login-dropdown-container">
 			<div className="form_container">
 				<form className="form">
 					<h1>Login</h1>
@@ -120,7 +123,14 @@ export default function Login() {
 					</button>
 					<div className="need-create">
 						<h1 className="need-create-title">Don't have an account?</h1>
-						<Link className="need-create-link" to="/createaccount/">
+						<Link
+							className="need-create-link"
+							to="/createaccount/"
+							onClick={() => {
+								document
+									.getElementById("login-dropdown")
+									.classList.toggle("drop");
+							}}>
 							Create Account
 						</Link>
 					</div>
@@ -128,7 +138,7 @@ export default function Login() {
 			</div>
 		</div>
 	) : (
-		<div className="full-page-container">
+		<div className="login-dropdown-container">
 			<div className="login-success">
 				<h1>Welcome {currentUser.firstName}</h1>
 				<h1>How may we assist you today?</h1>
