@@ -51,7 +51,7 @@ export default function Login() {
 
 	function Success(thisUser) {
 		console.log(thisUser.firstName);
-
+		clearForm();
 		setTimeout(() => {
 			document.getElementById("login-dropdown").classList.toggle("drop");
 		}, 4000);
