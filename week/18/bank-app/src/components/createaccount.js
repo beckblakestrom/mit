@@ -45,7 +45,7 @@ export default function CreateAccount() {
 		setShow(true);
 	}
 	return show ? (
-		<div className="full-page-container">
+		<div className="half-page-container">
 			<div className="form_container">
 				<form className="form">
 					<h1>Create Account</h1>
