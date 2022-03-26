@@ -15,15 +15,63 @@
 	border-bottom-right-radius: 25px;
 	color: hsl(0, 0%, 20%);
 	padding: 1rem 4rem;
+	transition: all 0.2s ease-out;
 }
 
 .login-dropdown:hover {
 	cursor: pointer;
-	color: orange;
+	color: hsl(27, 79%, 59%);
 	animation-name: bounce;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-out;
 	animation-delay: 0.1s;
+}
+
+.login-dropdown-arrow {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background-color: hsl(0, 0%, 96%);
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	color: hsl(0, 0%, 20%);
+	padding: 1rem 4rem;
+	transition: all 0.2s ease-out;
+}
+
+.login-dropdown-arrow:hover {
+	cursor: pointer;
+	color: hsl(27, 79%, 59%);
+	animation-name: bounce;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	animation-delay: 0.1s;
+}
+
+.login-dropdown-tools {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background-color: hsl(0, 0%, 96%);
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	color: hsl(0, 0%, 20%);
+	padding: 1rem 4rem;
+	transition: all 0.2s ease-out;
+}
+
+.login-dropdown-tools:hover {
+	cursor: pointer;
+	color: hsl(27, 79%, 59%);
+	animation-name: bounce;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	animation-delay: 0.1s;
+}
+
+.show {
+	opacity: 0;
+	visibility: collapse;
 }
 
 @keyframes bounce {
