@@ -30,12 +30,23 @@ export default function Nav() {
 			<div id="login-dropdown" className="secondary-nav">
 				<Login />
 				<button
+					id="login-button"
 					className="login-dropdown"
 					onClick={() => {
 						document.getElementById("login-dropdown").classList.toggle("drop");
+						document.getElementById("login-button").classList.toggle("show");
+						document.getElementById("down-arrow").classList.toggle("show");
 					}}>
 					Login
 				</button>
+				<i
+					id="down-arrow"
+					class="bi bi-caret-up-fill login-dropdown-arrow show"
+					onClick={() => {
+						document.getElementById("login-dropdown").classList.toggle("drop");
+						document.getElementById("login-button").classList.toggle("show");
+						document.getElementById("down-arrow").classList.toggle("show");
+					}}></i>
 			</div>
 		</React.Fragment>
 	) : (
@@ -57,16 +68,23 @@ export default function Nav() {
 					<Link className="link" to="/withdraw/">
 						Withdraw
 					</Link>
+					<span
+						onClick={() => {
+							setLoggedIn(false);
+						}}
+						className="link">
+						Logout
+					</span>
 				</div>
 			</div>
 			<div id="login-dropdown" className="secondary-nav">
 				<Login />
 				<button
-					className="login-dropdown"
+					className="login-dropdown-tools"
 					onClick={() => {
-						setLoggedIn(false);
+						document.getElementById("login-dropdown").classList.toggle("drop");
 					}}>
-					Logout
+					Quick Access
 				</button>
 			</div>
 		</React.Fragment>

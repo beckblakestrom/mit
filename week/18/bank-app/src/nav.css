@@ -75,6 +75,7 @@
 
 .link:hover {
 	color: hsl(27, 79%, 59%);
+	cursor: pointer;
 }
 
 .secondary-nav {
