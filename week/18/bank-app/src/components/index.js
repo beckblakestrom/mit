@@ -13,6 +13,8 @@ import Withdraw from "./withdraw";
 
 export default function Spa() {
 	const [loggedIn, setLoggedIn] = useState(false);
+	const [currentUser, setCurrentUser] = useState("");
+	const [currentUserIndex, setCurrentUserIndex] = useState(0);
 	const [user, setUser] = useState({
 		users: [
 			{
@@ -22,11 +24,28 @@ export default function Spa() {
 				password: "hard",
 				balance: 120000,
 			},
+			{
+				firstName: "Tony",
+				lastName: "Robbins",
+				email: "tony@gmail.com",
+				password: "hard",
+				balance: 555,
+			},
 		],
 	});
 	return (
 		<HashRouter>
-			<UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
+			<UserContext.Provider
+				value={{
+					user,
+					setUser,
+					loggedIn,
+					setLoggedIn,
+					currentUser,
+					setCurrentUser,
+					currentUserIndex,
+					setCurrentUserIndex,
+				}}>
 				<Nav />
 				<Routes>
 					<Route path="/" exact element={<Home />} />
