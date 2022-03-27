@@ -9,8 +9,16 @@ export default function Login() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [currentUser, setCurrentUser] = useState("");
-	const { user, setUser, loggedIn, setLoggedIn } = useContext(UserContext);
+	const {
+		user,
+		setUser,
+		loggedIn,
+		setLoggedIn,
+		currentUser,
+		setCurrentUser,
+		currentUserIndex,
+		setCurrentUserIndex,
+	} = useContext(UserContext);
 
 	function checkLogin(event) {
 		event.preventDefault();
@@ -24,10 +32,10 @@ export default function Login() {
 				password === user.users[i].password
 			) {
 				let thisUser = user.users[i];
-				console.log(`match`);
+				setCurrentUserIndex(i);
 				console.log(thisUser);
+				console.log(currentUserIndex);
 				setCurrentUser(thisUser);
-				console.log(currentUser);
 				setLoggedIn(true);
 				Success(thisUser);
 				return;
@@ -130,6 +138,10 @@ export default function Login() {
 								document
 									.getElementById("login-dropdown")
 									.classList.toggle("drop");
+								document
+									.getElementById("login-button")
+									.classList.toggle("show");
+								document.getElementById("down-arrow").classList.toggle("show");
 							}}>
 							Create Account
 						</Link>
