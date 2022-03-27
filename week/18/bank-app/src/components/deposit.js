@@ -14,47 +14,73 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 			<h3 className="warning"> {choice[Number(!isDeposit)]}</h3>
 			{/* value input */}
 			<input
+				id="depositId"
 				placeholder="100"
 				className="input"
 				type="number"
 				onChange={onChange}></input>
 			{/* submit button */}
-			<input className="deposit-submit" type="submit" value="Submit"></input>
+			<input
+				className="deposit-submit"
+				type="submit"
+				value="Submit"
+				onClick={() => {
+					document.getElementById("depositId").value = 0;
+				}}></input>
 		</label>
 	);
 };
 
 export default function Deposit() {
-	const ctx = useContext(UserContext);
+	const {
+		user,
+		setUser,
+		loggedIn,
+		setLoggedIn,
+		currentUser,
+		currentUserIndex,
+	} = useContext(UserContext);
+
 	let deposit = 0; // state of this transaction
-	console.log(`initial deposit = ${deposit}`);
-	// total
 	const [totalState, setTotalState] = React.useState(0);
 
 	// deposit or withdrawal
 	const [isDeposit, setIsDeposit] = React.useState(true);
 
 	// current balance printout
-	let status = `Current Balance: $${totalState} `;
+	let status = `Current Balance: $${currentUser.balance} `;
+	let balance = currentUser.balance;
 
 	// handles change within input
 	const handleChange = (event) => {
 		// changes deposit amount
 		deposit = Number(event.target.value);
-		console.log(`after handleChange deposit = ${deposit}`);
 	};
+
+	function clearDeposit() {}
 
 	// handles submit button
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (isDeposit == false && deposit > totalState) {
+		if (isDeposit === false && deposit > currentUser.balance) {
 			alert("insufficient funds");
 		} else {
 			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
-			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
+			let newTotal = isDeposit ? balance + deposit : balance - deposit;
 			// change totalState to above newTotal
 			setTotalState(newTotal);
-			console.log(`after submit deposit = ${deposit}`);
+			console.log("balance after:", user.users[currentUserIndex].balance);
+
+			// create shallow state
+			let tempState = [...user.users];
+
+			let tempUser = tempState[currentUserIndex];
+
+			tempUser.balance = newTotal;
+			console.log("tempUser Updated:", tempUser);
+			tempState[currentUserIndex] = tempUser;
+			console.log("tempState:", tempState);
+			clearDeposit();
 		}
 	};
 

@@ -9,7 +9,16 @@ export default function CreateAccount() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const { user, setUser, loggedIn, setLoggedIn } = useContext(UserContext);
+	const {
+		user,
+		setUser,
+		loggedIn,
+		setLoggedIn,
+		currentUser,
+		setCurrentUser,
+		currentUserIndex,
+		setCurrentUserIndex,
+	} = useContext(UserContext);
 
 	function validate(field, label, event) {
 		if (!field) {
@@ -36,6 +45,26 @@ export default function CreateAccount() {
 		user.users.push({ firstName, lastName, email, password, balance: 0 });
 		setShow(false);
 		setLoggedIn(true);
+		thisUser();
+	}
+
+	function thisUser() {
+		for (let i = 0; i < user.users.length; i++) {
+			if (
+				email === user.users[i].email &&
+				password === user.users[i].password
+			) {
+				let thisUser = user.users[i];
+				setCurrentUserIndex(i);
+				console.log(currentUserIndex);
+				setCurrentUser(thisUser);
+				return;
+			} else {
+				continue;
+			}
+
+			// does not match user.users[0], so not a match and then it runs again and is a match
+		}
 	}
 	function clearForm() {
 		setFirstName("");
@@ -151,9 +180,19 @@ export default function CreateAccount() {
 					</button>
 					<div className="need-create">
 						<h1 className="need-create-title">Already have an account?</h1>
-						<Link className="need-create-link" to="/login/">
+						<p
+							className="need-create-link"
+							onClick={() => {
+								document
+									.getElementById("login-dropdown")
+									.classList.toggle("drop");
+								document
+									.getElementById("login-button")
+									.classList.toggle("show");
+								document.getElementById("down-arrow").classList.toggle("show");
+							}}>
 							Login
-						</Link>
+						</p>
 					</div>
 				</form>
 			</div>
