@@ -5,16 +5,16 @@ import { UserContext } from "./context";
 import { Link } from "react-router-dom";
 
 export default function Balance() {
-	const { user, setUser } = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 	return (
 		<div>
 			<div className="page-container">
 				<div className="account-container">
 					<h1 className="account-welcome">
-						Hi, {user.users[0].firstName}. Here are your account details.
+						Hi, {currentUser.firstName}. Here are your account details.
 					</h1>
 					<h1 className="account-balance">
-						Current Balance: ${user.users[0].balance}
+						Current Balance: ${currentUser.balance}
 					</h1>
 					<div className="account-transaction-container">
 						<h1 className="account-transaction-header">Latest Transactions</h1>
