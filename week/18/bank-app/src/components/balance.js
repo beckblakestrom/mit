@@ -23,7 +23,7 @@ export default function Balance() {
 						Transfer <i class="bi bi-arrow-left-right"></i>
 					</Link>
 					<Link className="account-deposit grid-button" to="/deposit/">
-						Deposit <i class="bi bi-cash"></i>
+						Deposit <i class="bi bi-piggy-bank"></i>
 					</Link>
 					<Link className="account-withdraw grid-button" to="/withdraw/">
 						Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
