@@ -4,7 +4,7 @@ import { Banner } from "./context";
 export default function Home() {
 	return (
 		<React.Fragment>
-			<Banner image="/images/banner.jpg" text="The Standard of Excellence" />
+			<Banner image="/images/banner.jpg" text="Banking Redefined" />
 		</React.Fragment>
 	);
 }
