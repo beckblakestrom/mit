@@ -20,7 +20,10 @@ export default function Balance() {
 						<h1 className="account-transaction-header">Latest Transactions</h1>
 					</div>
 					<Link className="account-deposit grid-button" to="/deposit/">
-						Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
+						Transfer <i class="bi bi-arrow-left-right"></i>
+					</Link>
+					<Link className="account-deposit grid-button" to="/deposit/">
+						Deposit <i class="bi bi-cash"></i>
 					</Link>
 					<Link className="account-withdraw grid-button" to="/withdraw/">
 						Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
