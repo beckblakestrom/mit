@@ -23,6 +23,10 @@ export default function Spa() {
 				email: "blake@gmail.com",
 				password: "hard",
 				balance: 120000,
+				transactions: {
+					date: "3/27/2022",
+					amount: 45,
+				},
 			},
 			{
 				firstName: "Tony",
@@ -30,6 +34,10 @@ export default function Spa() {
 				email: "tony@gmail.com",
 				password: "hard",
 				balance: 555,
+				transactions: {
+					date: "3/27/2022",
+					amount: 45,
+				},
 			},
 		],
 	});
