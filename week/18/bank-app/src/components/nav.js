@@ -60,15 +60,11 @@ export default function Nav() {
 						Data
 					</Link>
 					<Link className="link" to="/balance/">
-						Balance
+						Account
 					</Link>
-					<Link className="link" to="/deposit/">
-						Deposit
-					</Link>
-					<Link className="link" to="/withdraw/">
-						Withdraw
-					</Link>
-					<span
+
+					<Link
+						to="/"
 						onClick={() => {
 							setLoggedIn(false);
 							document
@@ -78,7 +74,7 @@ export default function Nav() {
 						}}
 						className="link">
 						Logout
-					</span>
+					</Link>
 				</div>
 			</div>
 			<div id="login-dropdown" className="secondary-nav">
