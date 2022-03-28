@@ -125,44 +125,6 @@ a:hover {
 	background-color: hsl(0, 0%, 90%);
 }
 
-.account-container {
-	height: 100%;
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-areas:
-		"welcome welcome welcome"
-		"balance transaction deposit"
-		". transaction withdraw";
-	place-items: center;
-}
-
-.account-welcome {
-	grid-area: welcome;
-	font-size: 4rem;
-	align-self: center;
-	justify-self: center;
-}
-
-.account-balance {
-	grid-area: balance;
-	font-size: 3rem;
-}
-
-.account-transaction-container {
-	grid-area: transaction;
-	font-size: 2.5rem;
-}
-
-.account-deposit {
-	grid-area: deposit;
-}
-
-.account-withdraw {
-	grid-area: withdraw;
-}
-
 .full-page-container {
 	height: 90vh;
 	width: 100%;
