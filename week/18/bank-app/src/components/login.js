@@ -153,14 +153,14 @@ export default function Login() {
 				<h1>Welcome {currentUser.firstName}</h1>
 				<h1>How may we assist you today?</h1>
 				<div className="login-success-links">
-					<Link className="login-success-button" to="/balance/">
-						Balance
-					</Link>
 					<Link className="login-success-button" to="/deposit/">
 						Deposit
 					</Link>
 					<Link className="login-success-button" to="/withdraw/">
 						Withdraw
+					</Link>
+					<Link className="login-success-button" to="/balance/">
+						Transfer
 					</Link>
 				</div>
 			</div>
