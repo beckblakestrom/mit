@@ -42,7 +42,7 @@
 	content: "";
 	position: absolute;
 	bottom: 0;
-	left: 1%;
+	left: -1%;
 	width: 75%;
 	height: 3px;
 	background-color: hsl(27, 79%, 59%);
@@ -55,11 +55,11 @@
 
 .logo:hover::before {
 	opacity: 1;
-	right: -75%;
+	right: -65%;
 }
 
 .logo:hover::after {
-	width: 156%;
+	width: 164%;
 }
 .link-container {
 	display: flex;

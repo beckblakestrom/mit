@@ -38,6 +38,7 @@ export default function Login() {
 				setCurrentUser(thisUser);
 				setLoggedIn(true);
 				Success(thisUser);
+
 				return;
 			} else {
 				continue;

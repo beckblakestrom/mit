@@ -249,3 +249,10 @@
 	color: hsl(27, 79%, 59%);
 	cursor: pointer;
 }
+
+.login-success {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
