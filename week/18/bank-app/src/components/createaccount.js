@@ -20,6 +20,8 @@ export default function CreateAccount() {
 		setCurrentUserIndex,
 	} = useContext(UserContext);
 
+	let capitalFirst = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+
 	function validate(field, label, event) {
 		if (!field) {
 			return false;
@@ -199,11 +201,16 @@ export default function CreateAccount() {
 		</div>
 	) : (
 		<div className="full-page-container">
-			<h5>Welcome {firstName}</h5>
-			<h5>Thanks for choosing Barclays</h5>
-			<button onClick={clearForm} className="submit" type="submit">
-				Add Another Account
-			</button>
+			<div className="login-success">
+				<h5>Welcome {capitalFirst}.</h5>
+				<h5>Thank you for choosing Arthurs.</h5>
+				<Link to="/deposit/" className="submit">
+					Make your first deposit
+				</Link>
+				<button onClick={clearForm} className="submit" type="submit">
+					Add Another Account
+				</button>
+			</div>
 		</div>
 	);
 }
