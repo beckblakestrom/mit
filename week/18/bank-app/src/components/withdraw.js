@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "./context";
 
 // callback function, takes onclick functions
@@ -14,47 +14,73 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 			<h3 className="warning"> {choice[Number(!isDeposit)]}</h3>
 			{/* value input */}
 			<input
+				id="depositId"
 				placeholder="100"
 				className="input"
 				type="number"
 				onChange={onChange}></input>
 			{/* submit button */}
-			<input className="deposit-submit" type="submit" value="Submit"></input>
+			<input
+				className="deposit-submit"
+				type="submit"
+				value="Submit"
+				onClick={() => {
+					document.getElementById("depositId").value = 0;
+				}}></input>
 		</label>
 	);
 };
 
 export default function Withdraw() {
-	const ctx = useContext(UserContext);
+	const {
+		user,
+		setUser,
+		loggedIn,
+		setLoggedIn,
+		currentUser,
+		currentUserIndex,
+	} = useContext(UserContext);
+
 	let deposit = 0; // state of this transaction
-	console.log(`initial deposit = ${deposit}`);
-	// total
-	const [totalState, setTotalState] = useState(0);
+	const [totalState, setTotalState] = React.useState(0);
 
 	// deposit or withdrawal
-	const [isDeposit, setIsDeposit] = useState(true);
+	const [isDeposit, setIsDeposit] = React.useState(false);
 
 	// current balance printout
-	let status = `Current Balance: $${totalState} `;
+	let status = `Current Balance: $${currentUser.balance} `;
+	let balance = currentUser.balance;
 
 	// handles change within input
 	const handleChange = (event) => {
 		// changes deposit amount
 		deposit = Number(event.target.value);
-		console.log(`after handleChange deposit = ${deposit}`);
 	};
+
+	function clearDeposit() {}
 
 	// handles submit button
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (isDeposit == false && deposit > totalState) {
+		if (deposit > currentUser.balance) {
 			alert("insufficient funds");
 		} else {
 			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
-			let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
+			let newTotal = isDeposit ? balance + deposit : balance - deposit;
 			// change totalState to above newTotal
 			setTotalState(newTotal);
-			console.log(`after submit deposit = ${deposit}`);
+			console.log("balance after:", user.users[currentUserIndex].balance);
+
+			// create shallow state
+			let tempState = [...user.users];
+
+			let tempUser = tempState[currentUserIndex];
+
+			tempUser.balance = newTotal;
+			console.log("tempUser Updated:", tempUser);
+			tempState[currentUserIndex] = tempUser;
+			console.log("tempState:", tempState);
+			clearDeposit();
 		}
 	};
 
@@ -66,22 +92,9 @@ export default function Withdraw() {
 				<i className="lock bi bi-file-lock"></i>
 
 				{/* welcome header */}
-				<h1 className="welcome">Deposit & Withdraw</h1>
+				<h1 className="welcome">Withdraw</h1>
 
 				{/* please select header */}
-				<h2 className="select">Please Select:</h2>
-
-				{/* buttons to select deposit or withdrawal */}
-				<button
-					className="deposit-button button-1"
-					onClick={() => setIsDeposit(true)}>
-					Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
-				</button>
-				<button
-					className="deposit-button button-2"
-					onClick={() => setIsDeposit(false)}>
-					Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
-				</button>
 
 				{/*  */}
 				<ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>

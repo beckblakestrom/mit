@@ -62,26 +62,23 @@ export default function Deposit() {
 	// handles submit button
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (isDeposit === false && deposit > currentUser.balance) {
-			alert("insufficient funds");
-		} else {
-			// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
-			let newTotal = isDeposit ? balance + deposit : balance - deposit;
-			// change totalState to above newTotal
-			setTotalState(newTotal);
-			console.log("balance after:", user.users[currentUserIndex].balance);
 
-			// create shallow state
-			let tempState = [...user.users];
+		// creates new variables "newTotal". If isDeposit = true, add deposit. Else, subtract deposit.
+		let newTotal = balance + deposit;
+		// change totalState to above newTotal
+		setTotalState(newTotal);
+		console.log("balance after:", user.users[currentUserIndex].balance);
 
-			let tempUser = tempState[currentUserIndex];
+		// create shallow state
+		let tempState = [...user.users];
 
-			tempUser.balance = newTotal;
-			console.log("tempUser Updated:", tempUser);
-			tempState[currentUserIndex] = tempUser;
-			console.log("tempState:", tempState);
-			clearDeposit();
-		}
+		let tempUser = tempState[currentUserIndex];
+
+		tempUser.balance = newTotal;
+		console.log("tempUser Updated:", tempUser);
+		tempState[currentUserIndex] = tempUser;
+		console.log("tempState:", tempState);
+		clearDeposit();
 	};
 
 	// html returned
@@ -92,22 +89,9 @@ export default function Deposit() {
 				<i className="lock bi bi-file-lock"></i>
 
 				{/* welcome header */}
-				<h1 className="welcome">Deposit & Withdraw</h1>
+				<h1 className="welcome">Deposit</h1>
 
 				{/* please select header */}
-				<h2 className="select">Please Select:</h2>
-
-				{/* buttons to select deposit or withdrawal */}
-				<button
-					className="deposit-button button-1"
-					onClick={() => setIsDeposit(true)}>
-					Deposit <i className="icon icon-1 bi bi-cash-coin"></i>
-				</button>
-				<button
-					className="deposit-button button-2"
-					onClick={() => setIsDeposit(false)}>
-					Withdrawal <i className="icon icon-2 bi bi-cash-stack"></i>
-				</button>
 
 				{/*  */}
 				<ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
