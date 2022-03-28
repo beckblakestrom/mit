@@ -5,8 +5,8 @@ import { UserContext } from "./context";
 import { Link } from "react-router-dom";
 
 export default function Balance() {
-	const { currentUser } = useContext(UserContext);
-	return (
+	const { currentUser, loggedIn } = useContext(UserContext);
+	return loggedIn ? (
 		<div>
 			<div className="page-container">
 				<div className="account-container">
@@ -27,6 +27,10 @@ export default function Balance() {
 					</Link>
 				</div>
 			</div>
+		</div>
+	) : (
+		<div className="page-container-center">
+			<h1 className="please-login">Please Log In</h1>
 		</div>
 	);
 }
