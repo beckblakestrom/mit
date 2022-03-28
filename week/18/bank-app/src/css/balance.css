@@ -1,0 +1,11 @@
+.page-container-center {
+	height: 90vh;
+	background-color: hsl(0, 0%, 90%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.please-login {
+	font-size: 4rem;
+}
