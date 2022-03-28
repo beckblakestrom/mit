@@ -10,20 +10,20 @@ export default function Nav() {
 		<React.Fragment>
 			<div className="nav">
 				<Link to="/" className="logo">
-					Bad Bank
+					Arthurs
 				</Link>
 				<div className="link-container">
 					<Link className="link" to="/alldata/">
-						Data
+						Personal
 					</Link>
 					<Link className="link" to="/balance/">
-						Balance
+						Small Business
 					</Link>
 					<Link className="link" to="/deposit/">
-						Deposit
+						Corporate
 					</Link>
 					<Link className="link" to="/withdraw/">
-						Withdraw
+						About
 					</Link>
 				</div>
 			</div>
@@ -53,7 +53,7 @@ export default function Nav() {
 		<React.Fragment>
 			<div className="nav">
 				<Link to="/" className="logo">
-					Bad Bank
+					Arthurs
 				</Link>
 				<div className="link-container">
 					<Link className="link" to="/alldata/">
@@ -71,6 +71,10 @@ export default function Nav() {
 					<span
 						onClick={() => {
 							setLoggedIn(false);
+							document
+								.getElementById("login-dropdown")
+								.classList.remove("drop");
+							document.getElementById("down-arrow").classList.remove("drop");
 						}}
 						className="link">
 						Logout

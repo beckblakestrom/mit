@@ -52,7 +52,7 @@
 
 .logo:hover::before {
 	opacity: 1;
-	right: -60%;
+	right: -75%;
 }
 
 .logo:hover::after {
