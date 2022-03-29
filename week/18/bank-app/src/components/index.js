@@ -10,6 +10,7 @@ import CreateAccount from "./createaccount";
 import Deposit from "./deposit";
 import Login from "./login";
 import Withdraw from "./withdraw";
+import About from "./about";
 
 export default function Spa() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -39,6 +40,17 @@ export default function Spa() {
 					amount: 45,
 				},
 			},
+			{
+				firstName: "John",
+				lastName: "Doe",
+				email: "johndoe@gmail.com",
+				password: "secret",
+				balance: 1000,
+				transactions: {
+					date: "3/27/2022",
+					amount: 45,
+				},
+			},
 		],
 	});
 	return (
@@ -63,6 +75,7 @@ export default function Spa() {
 					<Route path="/deposit/" element={<Deposit />} />
 					<Route path="/login/" element={<Login />} />
 					<Route path="/withdraw/" element={<Withdraw />} />
+					<Route path="/about/" element={<About />} />
 				</Routes>
 			</UserContext.Provider>
 		</HashRouter>

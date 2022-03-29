@@ -13,7 +13,7 @@ export default function Nav() {
 					Arthurs
 				</Link>
 				<div className="link-container">
-					<Link className="link" to="/alldata/">
+					{/* <Link className="link" to="/alldata/">
 						Personal
 					</Link>
 					<Link className="link" to="/balance/">
@@ -21,8 +21,8 @@ export default function Nav() {
 					</Link>
 					<Link className="link" to="/deposit/">
 						Corporate
-					</Link>
-					<Link className="link" to="/withdraw/">
+					</Link> */}
+					<Link className="link" to="/about/">
 						About
 					</Link>
 				</div>
@@ -56,9 +56,9 @@ export default function Nav() {
 					Arthurs
 				</Link>
 				<div className="link-container">
-					<Link className="link" to="/alldata/">
+					{/* <Link className="link" to="/alldata/">
 						Data
-					</Link>
+					</Link> */}
 					<Link className="link" to="/balance/">
 						Account
 					</Link>

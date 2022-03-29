@@ -1,0 +1,36 @@
+.about-container {
+	height: 90vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+	align-items: center;
+}
+
+.about-heading {
+	font-size: 4rem;
+}
+
+.about-sub {
+	font-size: 3rem;
+}
+
+.about-link {
+	color: hsl(27, 79%, 59%);
+	transition: all 0.2s ease-out;
+}
+
+.about-link:hover {
+	cursor: pointer;
+	color: hsl(231, 79%, 59%);
+}
+
+.about-list {
+	list-style: circle;
+	font-size: 3rem;
+}
+
+.about-list-element-input {
+	color: hsl(231, 79%, 59%);
+}

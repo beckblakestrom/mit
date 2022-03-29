@@ -153,15 +153,46 @@ export default function Login() {
 				<h1>Welcome {currentUser.firstName}</h1>
 				<h1>How may we assist you today?</h1>
 				<div className="login-success-links">
-					<Link className="login-success-button" to="/deposit/">
+					<Link
+						onClick={() => {
+							document
+								.getElementById("login-dropdown")
+								.classList.toggle("drop");
+						}}
+						className="login-success-button"
+						to="/balance/">
+						Account Home
+					</Link>
+					<Link
+						onClick={() => {
+							document
+								.getElementById("login-dropdown")
+								.classList.toggle("drop");
+						}}
+						className="login-success-button"
+						to="/deposit/">
 						Deposit
 					</Link>
-					<Link className="login-success-button" to="/withdraw/">
+					<Link
+						onClick={() => {
+							document
+								.getElementById("login-dropdown")
+								.classList.toggle("drop");
+						}}
+						className="login-success-button"
+						to="/withdraw/">
 						Withdraw
 					</Link>
-					<Link className="login-success-button" to="/balance/">
+					{/* <Link
+						onClick={() => {
+							document
+								.getElementById("login-dropdown")
+								.classList.toggle("drop");
+						}}
+						className="login-success-button"
+						to="/balance/">
 						Transfer
-					</Link>
+					</Link> */}
 				</div>
 			</div>
 		</div>
