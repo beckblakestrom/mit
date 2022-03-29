@@ -19,27 +19,27 @@ export function Banner(props) {
 				<div className="products">
 					<div className="product-item">
 						<h6>Credit Cards</h6>
-						<i class="bi bi-credit-card-2-front"></i>
+						<i className="bi bi-credit-card-2-front"></i>
 					</div>
 					<div className="product-item">
 						<h6>Checking Accounts</h6>
-						<i class="bi bi-wallet2"></i>
+						<i className="bi bi-wallet2"></i>
 					</div>
 					<div className="product-item">
 						<h6>Savings Accounts</h6>
-						<i class="bi bi-piggy-bank"></i>
+						<i className="bi bi-piggy-bank"></i>
 					</div>
 					<div className="product-item">
 						<h6>Investment Portfolios</h6>
-						<i class="bi bi-graph-up-arrow"></i>
+						<i className="bi bi-graph-up-arrow"></i>
 					</div>
 					<div className="product-item">
 						<h6>Lending</h6>
-						<i class="bi bi-house"></i>
+						<i className="bi bi-house"></i>
 					</div>
 					<div className="product-item">
 						<h6>Currency Exchange</h6>
-						<i class="bi bi-currency-exchange"></i>
+						<i className="bi bi-currency-exchange"></i>
 					</div>
 				</div>
 			</div>

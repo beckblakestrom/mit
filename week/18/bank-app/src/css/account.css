@@ -2,12 +2,12 @@
 	height: 100%;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 50% 50%;
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-areas:
-		"welcome welcome welcome"
-		"balance transaction deposit"
-		". transaction withdraw";
+		"welcome welcome"
+		"deposit withdraw"
+		"balance balance";
 	place-items: center;
 }
 
@@ -20,12 +20,11 @@
 
 .account-balance {
 	grid-area: balance;
-	font-size: 3rem;
+	font-size: 4rem;
 }
 
 .account-transaction-container {
-	grid-area: transaction;
-	font-size: 2.5rem;
+	display: none;
 }
 
 .account-deposit {

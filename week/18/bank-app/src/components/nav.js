@@ -25,6 +25,9 @@ export default function Nav() {
 					<Link className="link" to="/about/">
 						About
 					</Link>
+					<Link className="link" to="/alldata/">
+						Data
+					</Link>
 				</div>
 			</div>
 			<div id="login-dropdown" className="secondary-nav">
@@ -41,7 +44,7 @@ export default function Nav() {
 				</button>
 				<i
 					id="down-arrow"
-					class="bi bi-caret-up-fill login-dropdown-arrow show"
+					className="bi bi-caret-up-fill login-dropdown-arrow show"
 					onClick={() => {
 						document.getElementById("login-dropdown").classList.toggle("drop");
 						document.getElementById("login-button").classList.toggle("show");
@@ -56,13 +59,12 @@ export default function Nav() {
 					Arthurs
 				</Link>
 				<div className="link-container">
-					{/* <Link className="link" to="/alldata/">
-						Data
-					</Link> */}
 					<Link className="link" to="/balance/">
 						Account
 					</Link>
-
+					<Link className="link" to="/alldata/">
+						Data
+					</Link>
 					<Link
 						to="/"
 						onClick={() => {
