@@ -7,6 +7,10 @@ import path from "path";
 
 import router from "./routes/index.js";
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -42,6 +46,11 @@ app.get("/", function (req, res) {
 });
 
 app.use("/home", router);
+
+app.post("/test", function (req, res) {
+	console.log("test");
+	res.send(req);
+});
 
 app.listen(3000, function () {
 	console.log("Running on port 3000");
