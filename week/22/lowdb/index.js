@@ -7,10 +7,6 @@ import path from "path";
 
 import router from "./routes/index.js";
 
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use(bodyParser.json());
-
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -18,6 +14,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, "db.json");
 const adapter = new JSONFile(file);
 const db = new Low(adapter);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
