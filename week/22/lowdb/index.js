@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
+app.use(express.static(path.join(__dirname, "public")));
+
 // Read data from JSON file, this will set db.data content
 await db.read();
 
