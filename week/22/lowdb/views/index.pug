@@ -1,11 +1,7 @@
-doctype html
-html
-  head
-    link(rel="shortcut icon", href="/images/favicon.png", type="image/x-icon")
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    div(class="nav")
+extends layout
+
+block content
+  div(class="nav")
       a(class="nav-link") Add User
       a(class="nav-link") Add Users
       a(class="nav-link") List All Users, Formatted

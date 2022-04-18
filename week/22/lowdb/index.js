@@ -28,25 +28,45 @@ await db.read();
 
 // If file.json doesn't exist, db.data will be null
 // Set default data
-db.data ||= { posts: [] };
+db.data ||= { users: [] };
 // db.data = db.data || { posts: [] } // for node < v15.x
 
+// writing user
+// app.post("/add", function (req, res) {
+// 	var user = {
+// 		name: req.body.name,
+// 		dob: req.body.dob,
+// 		email: req.body.email,
+// 		username: req.body.username,
+// 		password: req.body.password,
+// 		phone: req.body.phone,
+// 		address: req.body.address,
+// 		zip: req.body.zip,
+// 		lat: req.body.lat,
+// 		long: req.body.long,
+// 		avatar: req.body.avatar,
+// 	};
+// 	db.get("users").push(user).write();
+// 	res.send(db.db.data.users);
+// });
+
 // Create and query items using plain JS
-db.data.posts.push("hello world");
-db.data.posts[0];
+// db.data.users.push({});
+// db.data.posts[0];
 
-// You can also use this syntax if you prefer
-const { posts } = db.data;
-posts.push("hello world");
+// // You can also use this syntax if you prefer
+console.log(db.data);
+const { users } = db.data;
+users.push({ name: "Blake", zip: 29150 });
 
-// Write db.data content to db.json
+// // Write db.data content to db.json
 await db.write();
 
-app.get("/", function (req, res) {
-	res.send(db.data.posts);
-});
+app.use("/", router);
 
-app.use("/home", router);
+app.get("/home", function (req, res) {
+	res.send(db.data.users);
+});
 
 app.post("/test", function (req, res) {
 	console.log("test");
