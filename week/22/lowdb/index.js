@@ -31,47 +31,38 @@ await db.read();
 db.data ||= { users: [] };
 // db.data = db.data || { posts: [] } // for node < v15.x
 
-// writing user
-// app.post("/add", function (req, res) {
-// 	var user = {
-// 		name: req.body.name,
-// 		dob: req.body.dob,
-// 		email: req.body.email,
-// 		username: req.body.username,
-// 		password: req.body.password,
-// 		phone: req.body.phone,
-// 		address: req.body.address,
-// 		zip: req.body.zip,
-// 		lat: req.body.lat,
-// 		long: req.body.long,
-// 		avatar: req.body.avatar,
-// 	};
-// 	db.get("users").push(user).write();
-// 	res.send(db.db.data.users);
-// });
-
 // Create and query items using plain JS
 // db.data.users.push({});
 // db.data.posts[0];
 
 // // You can also use this syntax if you prefer
-console.log(db.data);
 const { users } = db.data;
-users.push({ name: "Blake", zip: 29150 });
+// users.push({ name: "Blake", zip: 29150 });
+
+app.post("/adduser", function (req, res) {
+	var user = {
+		name: req.body.name,
+		zip: req.body.zip,
+	};
+	users.push(user).write();
+	res.send(db.data);
+});
 
 // // Write db.data content to db.json
 await db.write();
 
 app.use("/", router);
 
-app.get("/home", function (req, res) {
-	res.send(db.data.users);
-});
+// GET method route
+// app.get("/", (req, res) => {
+// 	res.send("GET request to the homepage");
+// });
 
-app.post("/test", function (req, res) {
-	console.log("test");
-	res.send(req);
-});
+// POST method route
+// app.post("/", (req, res) => {
+// 	res.send("POST request to the homepage");
+// 	users.push({ name: "Thom", zip: 55678 }).write();
+// });
 
 app.listen(3000, function () {
 	console.log("Running on port 3000");
