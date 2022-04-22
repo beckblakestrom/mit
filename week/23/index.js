@@ -1,0 +1,1 @@
+var digital = 10;
