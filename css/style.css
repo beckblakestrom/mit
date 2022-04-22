@@ -152,6 +152,9 @@ a {
   align-items: center;
   transition: all 1s 0.5s;
 }
+.menu__button:hover {
+  cursor: pointer;
+}
 .menu__button-background {
   position: absolute;
   height: 100%;

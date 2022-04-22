@@ -124,6 +124,10 @@
 		align-items: center;
 		transition: all 1s 0.5s;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&-background {
 			position: absolute;
 			height: 100%;
