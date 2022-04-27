@@ -22,7 +22,7 @@ function App() {
 				inventory: 5,
 
 				clicks: 0,
-				price: 1.5,
+				price: 2.5,
 			},
 			{
 				item: "Banana",
